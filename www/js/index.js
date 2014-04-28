@@ -26,25 +26,31 @@ var app = {
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener('deviceready', initApp, false);
     },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicity call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-        app.receivedEvent('deviceready');
-    },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
-    }
+    ngapp: angular.module('healthmeasure', ['ngRoute'])
+    .config(function($routeProvider) {
+        $routeProvider
+            .when('/', {
+                controller:'MainCtrl',
+                templateUrl:'partials/main.html'
+            })
+            .when('/graph/:graphId', {
+                controller:'GraphCtrl',
+                templateUrl:'partials/graph.html'
+            })
+            .when('/excercises', {
+                controller:'ExcerciseCtrl',
+                templateUrl:'partials/excercise.html'
+            })
+            .when('/measures', {
+                controller:'MeasureCtrl',
+                templateUrl:'partials/measure.html'
+            })
+            .otherwise({
+                redirectTo:'/'
+            });
+        }).controller('ListCtrl', function($scope, Projects) {
+        $scope.projects = Projects;
+    })
 };
-var ngapp = angular.module('healthmeasure', [])
