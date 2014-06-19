@@ -17,38 +17,39 @@
  * under the License.
  */
 * {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+	-webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
 
 body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#ff8247;
-    background-image:linear-gradient(top, #ff8247 0%, #ffa175 51%);
-    background-image:-webkit-linear-gradient(top, #ff8247 0%, #ffa175 51%);
-    background-image:-ms-linear-gradient(top, #ff8247 0%, #ffa175 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #ff8247),
-        color-stop(0.51, #ffa175)
-    );
-    background-attachment:fixed;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
-    height:100%;
-    margin:0px;
-    padding:0px;
-    text-transform:uppercase;
-    width:100%;
+	-webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+	-webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+	-webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+	background-color:#66b5d8;
+	background-image:linear-gradient(top, #66b5d8 0%, #339ccb 51%);
+	background-image:-webkit-linear-gradient(top, #66b5d8 0%, #339ccb 51%);
+	background-image:-ms-linear-gradient(top, #66b5d8 0%, #339ccb 51%);
+	background-image:-webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0, #66b5d8),
+		color-stop(0.51, #339ccb)
+	);
+	background-attachment:fixed;
+	font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+	font-size:12px;
+	height:100%;
+	margin:0px;
+	padding:0px;
+	text-transform:uppercase;
+	width:100%;
+	padding-bottom: 2.5em;
 }
 
 #logo {
-    height: 6vh;
-    margin: 20px auto;
-    display: block;
+	height: 6vh;
+	margin: 20px auto;
+	display: block;
 }
 
 /* Portrait layout (default) */
@@ -57,51 +58,88 @@ body {
 
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-    .app {
-    }
+	.app {
+	}
 }
 
-h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
+.main_heading {
+	font-size:18px;
+	font-weight:normal;
+	margin:0px;
+	overflow:visible;
+	padding:0px;
+	text-align:center;
+	color: white;
+	line-height: 69px;
+}
+
+.backbutton {
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 39px;
+	line-height: 61px;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: rgb(255, 255, 255);
+	text-decoration: none;
 }
 
 .event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
+	border-radius:4px;
+	-webkit-border-radius:4px;
+	color:#FFFFFF;
+	font-size:12px;
+	margin:0px 30px;
+	padding:2px 0px;
 }
 
 .event.listening {
-    background-color:#333333;
-    display:block;
+	background-color:#333333;
+	display:block;
 }
 
 .event.received {
-    background-color:#4B946A;
-    display:none;
+	background-color:#4B946A;
+	display:none;
 }
 
 @keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
+	from { opacity: 1.0; }
+	50% { opacity: 0.4; }
+	to { opacity: 1.0; }
 }
  
 @-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
+	from { opacity: 1.0; }
+	50% { opacity: 0.4; }
+	to { opacity: 1.0; }
 }
  
 .blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
+	animation:fade 3000ms infinite;
+	-webkit-animation:fade 3000ms infinite;
+}
+
+.menu {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.menu li {
+	list-style: none;
+	border-bottom: 1px solid rgb(255, 255, 255);
+	width: 100%;
+	margin: 0;
+	-webkit-margin-before: 0;
+	-webkit-margin-start: 0;
+	background-color: rgba(255, 255, 255, 0.25);
+}
+.menu li a {
+	font-size: 18pt;
+	font-weight: lighter;
+	color: rgb(255, 255, 255);
+	line-height: 44pt;
+	text-decoration: none;
 }

@@ -17,40 +17,332 @@
  * under the License.
  */
 var app = {
-    // Application Constructor
-    initialize: function() {
-        this.bindEvents();
-    },
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-        document.addEventListener('deviceready', initApp, false);
-    },
-    ngapp: angular.module('healthmeasure', ['ngRoute'])
-    .config(function($routeProvider) {
-        $routeProvider
-            .when('/', {
-                controller:'MainCtrl',
-                templateUrl:'partials/main.html'
-            })
-            .when('/graph/:graphId', {
-                controller:'GraphCtrl',
-                templateUrl:'partials/graph.html'
-            })
-            .when('/excercises', {
-                controller:'ExcerciseCtrl',
-                templateUrl:'partials/excercise.html'
-            })
-            .when('/measures', {
-                controller:'MeasureCtrl',
-                templateUrl:'partials/measure.html'
-            })
-            .otherwise({
-                redirectTo:'/'
-            });
-        }).controller('ListCtrl', function($scope, Projects) {
-        $scope.projects = Projects;
-    })
+	ngapp: null,
+	// Application Constructor
+	initialize: function() {
+		this.bindEvents();
+	},
+	// Bind Event Listeners
+	//
+	// Bind any events that are required on startup. Common events are:
+	// 'load', 'deviceready', 'offline', and 'online'.
+	bindEvents: function() {
+		document.addEventListener('deviceready', function(){}, false);
+	}
 };
+var mainTemplate = 'partials/main.html';
+
+document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
+.config(function($routeProvider) {
+	$routeProvider
+		.when('/', {
+			controller: 'MainCtrl',
+			templateUrl: mainTemplate
+		})
+		.when('/measure', {
+			controller: 'MeasureCtrl',
+			templateUrl: 'partials/measure.html'
+		})
+		.when('/weigh', {
+			controller: 'WeighCtrl',
+			templateUrl: 'partials/weigh.html'
+		})
+		.when('/exercise', {
+			controller: 'ExerciseCtrl',
+			templateUrl: 'partials/exercise_choose_group.html'
+		})
+		.when('/exercise/:group', {
+			controller: 'ExerciseCtrl',
+			templateUrl: 'partials/exercise_choose_activity.html'
+		})
+		.when('/exercise/:group/:activity', {
+			controller: 'ExerciseCtrl',
+			templateUrl: 'partials/exercise_entry.html'
+		})
+		.when('/report/', {
+			controller: 'ReportCtrl',
+			templateUrl: 'partials/report.html'
+		})
+		.when('/settings/', {
+			controller: 'SettingsCtrl',
+			templateUrl: 'partials/settings.html'
+		})
+		.otherwise({
+			redirectTo:'/'
+		});
+}).controller('MainCtrl', ['$scope', '$route', '$rootScope', 'translations', function($scope, $route, $rootScope, translations) {
+	$rootScope.location = {
+	baseUrl: $('base').attr('href')
+	};
+
+	$scope.translations = translations;
+	$scope.currentLanguage = navigator.language.substr(0,2);
+	// alert(navigator.language.substr(0,2));
+
+	$scope.isOnMainPage = function() {
+		if($route.current && $route.current.templateUrl === mainTemplate) {
+			return true;
+		}
+		return false;
+	};
+}]).controller('MeasureCtrl', ['$scope', 'backend', '$location', 'translations', function($scope, backend, $location, translations) {
+	initJqueryBindings();
+	var lastMeasurement = backend.getLastMeasurement();
+	$scope.left_biceps = lastMeasurement.left_biceps;
+	$scope.right_biceps = lastMeasurement.right_biceps;
+	$scope.bust = lastMeasurement.bust;
+	$scope.tummy = lastMeasurement.tummy;
+	$scope.butt = lastMeasurement.butt;
+	$scope.left_thigh = lastMeasurement.left_thigh;
+	$scope.right_thigh = lastMeasurement.right_thigh;
+	$scope.left_calf = lastMeasurement.left_calf;
+	$scope.right_calf = lastMeasurement.right_calf;
+	$scope.translations = translations;
+	$scope.currentLanguage = navigator.language.substr(0,2);
+
+
+	$scope.measureUp = function () {
+		var date = new Date();
+
+		var data = {
+			'date': date,
+			'left_biceps': $scope.new_left_biceps || 0,
+			'right_biceps': $scope.new_right_biceps || 0,
+			'bust': $scope.new_bust || 0,
+			'tummy': $scope.new_tummy || 0,
+			'butt': $scope.new_butt || 0,
+			'left_thigh': $scope.new_left_thigh || 0,
+			'right_thigh': $scope.new_right_thigh || 0,
+			'left_calf': $scope.new_left_calf || 0,
+			'right_calf': $scope.new_right_calf || 0
+		};
+		backend.addMeasurement(data);
+		var page = "report";
+		$location.url(page);
+	};
+}]).controller('WeighCtrl', ['$scope', 'backend', '$location',  function($scope, backend, $location) {
+	initJqueryBindings();
+	var lastWeight = backend.getLastWeight();
+	$scope.weight = lastWeight.weight;
+	$scope.max_weight = parseFloat(lastWeight.weight) + 7;
+	$scope.min_weight = parseFloat(lastWeight.weight) - 7;
+	$scope.last_date = lastWeight.date;
+	$scope.new_weight = lastWeight.weight;
+
+
+	$scope.weighUp = function () {
+		var date = new Date();
+
+		var data = {
+			'date': date,
+			'weight': $scope.new_weight || 0
+		};
+		backend.addWeight(data);
+		$scope.new_weight = 0;
+		var page = "report";
+		$location.url(page);
+	};
+}]).controller('ExerciseCtrl', ['$scope', '$routeParams', 'activityData', 'translations', function($scope, $routeParams, activityData, translations) {
+	initJqueryBindings();
+	$scope.activityData = activityData;
+	$scope.translations = translations;
+	$scope.currentLanguage = navigator.language.substr(0,2);
+	$scope.params = $routeParams;
+	
+}]).controller('ReportCtrl', ['$scope', 'backend', 'graphdata', function($scope, backend, graphdata) {
+	initJqueryBindings();
+	$scope.measurementsData = backend.getMeasurements();
+	$scope.shouldShowHeader = function(index) {
+		if(index === 0 || moment($scope.measurementsData[index].date).isoWeek() != moment($scope.measurementsData[index-1].date).isoWeek()) {
+			return true;
+		} else {
+			return false;
+		}
+	};
+	$scope.average = function(one, two) {
+		return Math.floor((parseInt(one, 10) + parseInt(two, 10))/2);
+	};
+	
+}]).controller('SettingsCtrl', ['$scope', 'backend',function($scope, backend) {
+	initJqueryBindings();
+	$scope.clearData = function() {
+		var response=confirm("Vill du verkligen ta bort all sparad data?");
+		if (response === true) {
+			backend.clearMeasurements();
+			backend.clearWeights();
+		}
+	};
+}]).filter('weekly', function() {
+	return function(dateString) {
+		return moment(dateString).isoWeek();
+	};
+}).filter('fromNow', function() {
+	return function(dateString) {
+		return moment(dateString).fromNow();
+	};
+}).factory('graphdata', function(){
+	var graphdata = {
+		getTableData: function(array, x_key, y_key) {
+			if(array === null || array.length === 0) {
+				return [];
+			}
+			var result = {
+				'x_name': "",
+				'y_name': "",
+				'x_min': 0,
+				'x_max': 0,
+				'y_min': 0,
+				'y_max': 0,
+				'values': []
+			};
+			result['x_min'] = array[0][x_key];
+			result['x_max'] = array[0][x_key];
+			result['y_min'] = array[0][y_key];
+			result['y_max'] = array[0][y_key];
+			for(var i = 0; i < array.length; i++) {
+				var point = array[i];
+				if(point[x_key] < result['x_min']) {
+					result['x_min'] = point[x_key];
+				}
+				if(point[x_key] > result['x_max']){
+					result['x_max'] = point[x_key];
+				}
+				if(point[y_key] < result['y_min']) {
+					result['y_min'] = point[y_key];
+				}
+				if(point[y_key] > result['y_max']){
+					result['y_max'] = point[y_key];
+				}
+				result.values.push({
+					x: point[x_key],
+					y: point[y_key]
+				});
+			}
+			return result;
+		}
+	};
+	return graphdata;
+}).factory('backend', function() {
+	var m = null; // Measurments cache object
+	var w = null; // Weights cache object
+	var backend = {
+		login: function () {},
+		logout: function () {},
+
+
+		// Internal API endpoints
+		
+		getMeasurements: function () {
+			return this.getDataPoints("measurements");
+		},
+		getWeights: function () {
+			return this.getDataPoints("weights");
+		},
+
+
+		getLastMeasurement: function () {
+			if(m === null) {
+				m = this.getMeasurements();
+			}
+			if(m.length > 0){
+				return m[m.length-1];
+			} else {
+				return [];
+			}
+		},
+		getLastWeight: function () {
+			if(w === null) {
+				w = this.getWeights();
+			}
+			if(w.length > 0){
+				return w[w.length-1];
+			} else {
+				return [];
+			}
+		},
+
+
+		addMeasurement: function (measurement) {
+			m = this.addDataPoint(m, "measurements", measurement);
+		},
+		addWeight: function (weight) {
+			w = this.addDataPoint(w, "weights", weight);
+		},
+
+
+		clearMeasurements: function () {
+			m = [];
+			this.clearDataPoints(m, "measurements");
+		},
+		clearWeights: function () {
+			w = [];
+			this.clearDataPoints(m, "weights");
+		},
+
+
+		// Core logic data storage functions
+		
+		getDataPoints: function (key) {
+			d = localStorage.getItem(key);
+			if(d === null || d === "") {
+				d = [];
+				d = JSON.stringify(d);
+				localStorage.setItem(key, d);
+			}
+			d = JSON.parse(d);
+			return d;
+		},
+		addDataPoint: function (d, key, dataPoint) {
+			if(d === null) {
+				d = [];
+			}
+			d.push(dataPoint);
+			localStorage.setItem(key, JSON.stringify(d));
+			return d;
+
+		},
+		clearDataPoints: function (d, key) {
+			localStorage.setItem(key, JSON.stringify(d));
+		}
+
+
+	};
+	return backend;
+});
+
+function initJqueryBindings(){
+	var onClass = "on";
+	var showClass = "show";
+
+	jQuery(".floatlabel > input", document).bind("checkval",function(evt) {
+		var $label = jQuery(this).prev("label");
+		var target = evt.target;
+		var $target = jQuery(target);
+		if(target === document.activeElement){
+			$label.addClass(showClass);
+			var text = $target.data("placeholder") || "";
+			$target.attr("placeholder", text);
+		} else {
+			if(!$target.data("placeholder") && $target.hasClass(showClass)){
+				$target.attr("placeholder","");
+			} else {
+				$target.attr("placeholder", $label.text());
+			}
+			$label.removeClass(showClass);
+		}
+	}).on("keyup",function(){
+		jQuery(this).trigger("checkval");
+	}).on("focus",function(){
+		jQuery(this).prev("label").addClass(onClass);
+		jQuery(this).trigger("checkval");
+	}).on("blur",function(){
+		jQuery(this).prev("label").removeClass(onClass);
+	}).trigger("checkval");
+
+
+
+}
+
+document.addEventListener('deviceready', initJqueryBindings, false);
+
+
