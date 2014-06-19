@@ -80,6 +80,20 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
+        CGRect viewBounds = [self.webView bounds];
+        viewBounds.origin.y = 20;
+        //viewBounds.size.height = viewBounds.size.height - 20;
+        self.webView.frame = viewBounds;
+    }
+    self.view.backgroundColor = [UIColor colorWithRed:51.0f/255.0f
+                                                green:156.0f/255.0f
+                                                 blue:203.0f/255.0f
+                                                alpha:0.8f];
+}
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)viewDidUnload
