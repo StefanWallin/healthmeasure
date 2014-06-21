@@ -199,6 +199,12 @@ document.ngapp.value("translations", {
 			"en": "Others"
 		}
 	},
+	"general": {
+		"logo": {
+			"sv": "Hälsomått",
+			"en": "Healthmeasure"
+		}
+	},
 	"menu": {
 		"measure": {
 			"sv": "Mät",
