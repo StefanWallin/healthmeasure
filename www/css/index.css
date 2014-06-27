@@ -3,6 +3,9 @@
 
 * {
 	-webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
 body {
@@ -38,6 +41,7 @@ body {
 	font-weight: 100;
 	font-size: 22pt;
 	display: block;
+	margin-top: 4px;
 }
 
 /* Portrait layout (default) */
@@ -132,3 +136,58 @@ body {
 	line-height: 44pt;
 	text-decoration: none;
 }
+
+.field--wrapper {
+	position:relative;
+	margin-bottom:20px;
+}
+.field--wrapper input {
+	-webkit-appearance: none;
+	background: rgba(0, 0, 0, 0);
+	border: 2px solid rgb(255, 255, 255);
+	color: rgb(255, 255, 255);
+	border-radius: 5px;
+	padding: 6px;
+	font-size: 16px;
+	width: 100%;
+}
+.field--wrapper  {
+	color: white;
+}
+
+.field--wrapper ::-webkit-input-placeholder {
+   color: white;
+}
+
+.field--wrapper :-moz-placeholder { /* Firefox 18- */
+   color: white;  
+}
+
+.field--wrapper ::-moz-placeholder {  /* Firefox 19+ */
+   color: white;  
+}
+
+.field--wrapper :-ms-input-placeholder {  
+   color: white;  
+}
+
+
+.field--wrapper label {
+	position:absolute;
+	top:13px;
+	left:5px;
+	font-size:11px;
+	color:white;
+	transition: all 0.1s linear;
+	opacity:0;
+	font-weight:bold;
+}
+.field--wrapper label.on {
+	color: white;
+}
+.field--wrapper label.show {
+	top: -12px;
+	left: 1px;
+	opacity:1;
+}
+

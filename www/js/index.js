@@ -116,6 +116,7 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 			'left_calf': $scope.new_left_calf || 0,
 			'right_calf': $scope.new_right_calf || 0
 		};
+		console.log("Saving measurements: ", data);
 		backend.addMeasurement(data);
 		var page = "report";
 		$location.url(page);
@@ -314,7 +315,7 @@ function initJqueryBindings(){
 	var onClass = "on";
 	var showClass = "show";
 
-	jQuery(".floatlabel > input", document).bind("checkval",function(evt) {
+	jQuery(".field--wrapper > input", document).bind("checkval",function(evt) {
 		var $label = jQuery(this).prev("label");
 		var target = evt.target;
 		var $target = jQuery(target);
