@@ -208,7 +208,7 @@ document.ngapp.value("translations", {
 	"menu": {
 		"measure": {
 			"sv": "Mät",
-			"en": "measure"
+			"en": "Measure"
 		},
 		"weigh": {
 			"sv": "Väg",
@@ -240,13 +240,13 @@ document.ngapp.value("translations", {
 			"form": {
 				"left_biceps": {
 					"label": {
-						"sv": "Vänster biceps",
+						"sv": "Vänster överarm",
 						"en": "Left Biceps"
 					}
 				},
 				"right_biceps": {
 					"label": {
-						"sv": "Höger biceps",
+						"sv": "Höger överarm",
 						"en": "Right Biceps"
 					}
 				},
@@ -300,37 +300,37 @@ document.ngapp.value("translations", {
 				},
 				"left_bicep": {
 					"required": {
-						"sv": "Vänster biceps måste mätas.",
+						"sv": "Vänster överarm måste mätas.",
 						"en": "Your vänster biceps is required."
 					},
 					"minlength": {
-						"sv": "Mått på vänster biceps borde vara minst 2 siffror.",
+						"sv": "Mått på vänster överarm borde vara minst 2 siffror.",
 						"en": "Your vänster biceps is required to be at least 2 digits."
 					},
 					"maxlength": {
-						"sv": "Mått på vänster biceps får max vara 5 siffror.",
+						"sv": "Mått på vänster överarm får max vara 5 siffror.",
 						"en": "Your vänster biceps cannot be larger than 5 digits."
 					},
 					"pattern": {
-						"sv": "Icke giltigt bicepsmått, 2 till 5 siffror krävs.",
+						"sv": "Icke giltigt överarmsmått, 2 till 5 siffror krävs.",
 						"en": "That is not a valid vänster biceps measurment, only 2-5 digits allowed."
 					}
 				},
 				"right_bicep": {
 					"required": {
-						"sv": "Höger biceps måste mätas.",
+						"sv": "Höger överarm måste mätas.",
 						"en": "Your right biceps is required."
 					},
 					"minlength": {
-						"sv": "Mått på höger biceps borde vara minst 2 siffror.",
+						"sv": "Mått på höger överarm borde vara minst 2 siffror.",
 						"en": "Your right biceps is required to be at least 2 digits."
 					},
 					"maxlength": {
-						"sv": "Mått på höger biceps får max vara 5 siffror.",
+						"sv": "Mått på höger överarm får max vara 5 siffror.",
 						"en": "Your right biceps cannot be larger than 5 digits."
 					},
 					"pattern": {
-						"sv": "Icke giltigt bicepsmått, 2 till 5 siffror krävs.",
+						"sv": "Icke giltigt överarmsmått, 2 till 5 siffror krävs.",
 						"en": "That is not a valid right biceps measurment, only 2-5 digits allowed."
 					}
 				},
@@ -394,69 +394,69 @@ document.ngapp.value("translations", {
 						"en": "Your Left Thigh is required."
 					},
 					"minlength": {
-						"sv": "",
+						"sv": "Vänstra lårets omkrets bör vara minst 3 siffror.",
 						"en": "Your Left Thigh is required to be at least 3 digits."
 					},
 					"maxlength": {
-						"sv": "",
+						"sv": "Vänstra lårets omkrets får max vara 5 siffror.",
 						"en": "Your Left Thigh cannot be larger than 5 digits."
 					},
 					"pattern": {
-						"sv": "",
+						"sv": "Icke giltigt lårmått, 3 till 5 siffror krävs.",
 						"en": "That is not a valid Left Thigh measurment, only 3-5 digits allowed."
 					}
 				},
 				"right_thigh": {
 					"required": {
-						"sv": "",
+						"sv": "Du måste mäta höger lårs omkrets.",
 						"en": "Your Right Thigh is required."
 					},
 					"minlength": {
-						"sv": "",
+						"sv": "Högra lårets omkrets bör vara minst 3 siffror.",
 						"en": "Your Right Thigh is required to be at least 3 digits."
 					},
 					"maxlength": {
-						"sv": "",
+						"sv": "Högra lårets omkrets får max vara 5 siffror.",
 						"en": "Your Right Thigh cannot be larger than 5 digits."
 					},
 					"pattern": {
-						"sv": "",
+						"sv": "Icke giltigt lårmått, 3 till 5 siffror krävs.",
 						"en": "That is not a valid Right Thigh measurment, only 3-5 digits allowed."
 					}
 				},
 				"left_calf": {
 					"required": {
-						"sv": "",
+						"sv": "Du måste mäta vänster vads omkrets.",
 						"en": "Your Left Calf is required."
 					},
 					"minlength": {
-						"sv": "",
+						"sv": "Vänstra vadens omkrets bör vara minst 3 siffror.",
 						"en": "Your Left Calf is required to be at least 2 digits."
 					},
 					"maxlength": {
-						"sv": "",
+						"sv": "Vänstra vadens omkrets får max vara 5 siffror.",
 						"en": "Your Left Calf cannot be larger than 5 digits."
 					},
 					"pattern": {
-						"sv": "",
+						"sv": "Icke giltigt vadmått, 3 till 5 siffror krävs.",
 						"en": "That is not a valid Left Calf measurment, only 2-5 digits allowed."
 					}
 				},
 				"right_calf": {
 					"required": {
-						"sv": "",
+						"sv": "Du måste mäta höger vads omkrets.",
 						"en": "Your Right Calf is required."
 					},
 					"minlength": {
-						"sv": "",
+						"sv": "Högra vadens omkrets bör vara minst 3 siffror.",
 						"en": "Your Right Calf is required to be at least 2 digits."
 					},
 					"maxlength": {
-						"sv": "",
+						"sv": "Högra vadens omkrets får max vara 5 siffror.",
 						"en": "Your Right Calf cannot be larger than 5 digits."
 					},
 					"pattern": {
-						"sv": "",
+						"sv": "Icke giltigt vadmått, 3 till 5 siffror krävs.",
 						"en": "That is not a valid Right Calf measurment, only 2-5 digits allowed."
 					}
 				}
