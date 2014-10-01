@@ -237,6 +237,62 @@ document.ngapp.value("translations", {
 				"sv": "Ange kroppsdelarnas omkrets i mm",
 				"en": "Enter body measurements in mm"
 			},
+			"form": {
+				"left_biceps": {
+					"label": {
+						"sv": "Vänster biceps",
+						"en": "Left Biceps"
+					}
+				},
+				"right_biceps": {
+					"label": {
+						"sv": "Höger biceps",
+						"en": "Right Biceps"
+					}
+				},
+				"bust": {
+					"label": {
+						"sv": "Byst",
+						"en": "Bust"
+					}
+				},
+				"tummy": {
+					"label": {
+						"sv": "Mage",
+						"en": "Tummy"
+					}
+				},
+				"butt": {
+					"label": {
+						"sv": "Stuss",
+						"en": "Butt"
+					}
+				},
+				"left_thigh": {
+					"label": {
+						"sv": "Vänster lår",
+						"en": "Left Thigh"
+					}
+				},
+				"right_thigh": {
+					"label": {
+						"sv": "Höger lår",
+						"en": "Right Thigh"
+					}
+				},
+				"left_calf": {
+					"label": {
+						"sv": "Vänster vad",
+						"en": "Left Calf"
+					}
+				},
+				"right_calf": {
+					"label": {
+						"sv": "Höger vad",
+						"en": "Right Calf"
+					}
+				},
+			},
 			"error": {
 				"empty_form": {
 					"sv": "Du har inte angett några mått",
@@ -248,7 +304,7 @@ document.ngapp.value("translations", {
 						"en": "Your vänster biceps is required."
 					},
 					"minlength": {
-						"sv": "Mått på vänster biceps måste vara minst 2 siffror.",
+						"sv": "Mått på vänster biceps borde vara minst 2 siffror.",
 						"en": "Your vänster biceps is required to be at least 2 digits."
 					},
 					"maxlength": {
@@ -266,7 +322,7 @@ document.ngapp.value("translations", {
 						"en": "Your right biceps is required."
 					},
 					"minlength": {
-						"sv": "Mått på höger biceps måste vara minst 2 siffror.",
+						"sv": "Mått på höger biceps borde vara minst 2 siffror.",
 						"en": "Your right biceps is required to be at least 2 digits."
 					},
 					"maxlength": {
@@ -284,7 +340,7 @@ document.ngapp.value("translations", {
 						"en": "The circumference of your bust is required."
 					},
 					"minlength": {
-						"sv": "Mått på bysten måste vara minst 3 siffror.",
+						"sv": "Mått på bysten borde vara minst 3 siffror.",
 						"en": "Your bust is required to be at least 3 digits."
 					},
 					"maxlength": {
@@ -302,7 +358,7 @@ document.ngapp.value("translations", {
 						"en": "The circumference of your tummy is required."
 					},
 					"minlength": {
-						"sv": "Magens omkrets måste vara minst 3 siffror.",
+						"sv": "Magens omkrets borde vara minst 3 siffror.",
 						"en": "Your tummy is required to be at least 3 digits."
 					},
 					"maxlength": {
@@ -320,21 +376,21 @@ document.ngapp.value("translations", {
 						"en": "The circumference of your butt is required."
 					},
 					"minlength": {
-						"sv": "",
+						"sv": "Stussens omkrets borde vara minst 3 siffror.",
 						"en": "Your Butt is required to be at least 3 digits."
 					},
 					"maxlength": {
-						"sv": "",
+						"sv": "Stussens omkrets får max vara 5 siffror.",
 						"en": "Your Butt cannot be larger than 5 digits."
 					},
 					"pattern": {
-						"sv": "",
+						"sv": "Icke giltigt stussmått, 3 till 5 siffror krävs.",
 						"en": "That is not a valid Butt measurment, only 3-5 digits allowed."
 					}
 				},
 				"left_thigh": {
 					"required": {
-						"sv": "",
+						"sv": "Du måste mäta vänster lårs omkrets.",
 						"en": "Your Left Thigh is required."
 					},
 					"minlength": {

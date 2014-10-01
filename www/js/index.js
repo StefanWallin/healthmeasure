@@ -103,9 +103,21 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 	$scope.no_values_error = false;
 
 	$scope.measureUp = function () {
+		var dirty_but_empty = function (scope) {
+			if(scope.new_left_biceps) return false;
+			if(scope.new_right_biceps) return false;
+			if(scope.new_bust) return false;
+			if(scope.new_tummy) return false;
+			if(scope.new_butt) return false;
+			if(scope.new_left_thigh) return false;
+			if(scope.new_right_thigh) return false;
+			if(scope.new_left_calf) return false;
+			if(scope.new_right_calf) return false;
+			return true;
+		};
 		var date = new Date();
 
-		if($scope.measureForm.$pristine) {
+		if($scope.measureForm.$pristine || dirty_but_empty($scope)) {
 			$scope.no_values_error = true;
 			$timeout(function (argument) {
 				$scope.no_values_error = false;
@@ -326,7 +338,6 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 		controller: function($scope, $timeout) {
 			$scope.clicked = false;
 			$scope.btnClick = function(){
-				console.log("clicked!");
 				$scope.clicked = true;
 				$timeout(function() {
 					$scope.clicked = false;
