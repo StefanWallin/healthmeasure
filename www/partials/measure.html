@@ -1,108 +1,188 @@
 <h2 class="main_heading">{{translations.menu.measure[currentLanguage]}}</h2>
 
 <form name="measureForm" class="container_12" novalidate>
-	<p class="info_paragraph"><strong>Enter all measurements in mm</strong></p>
+	<p class="info_paragraph"><strong>{{translations.page.measure.enter_measurements[currentLanguage]}}</strong></p>
 	<p class="info_paragraph error-container" ng-show="no_values_error">
-		<strong class="error ">You haven't entered any measurements!</strong>
+		<strong class="error ">{{translations.page.measure.error.empty_form[currentLanguage]}}</strong>
 	</p>
 
 	<div class="field--wrapper grid_half">
 		<label for="left_biceps">Left Biceps</label>
 		<input id="left_biceps" name="left_biceps" ng-model="new_left_biceps" placeholder="Left Biceps" ng-minlength="2" ng-maxlength="5" ng-pattern="/\d+/" type="tel">
+		<small>mm</small>
 		<div class="error-container" ng-show="measureForm.left_biceps.$dirty && measureForm.left_biceps.$invalid">
-			<small class="error" ng-show="measureForm.left_biceps.$error.required">Your Left Biceps is required.</small>
-			<small class="error" ng-show="measureForm.left_biceps.$error.minlength">Your Left Biceps is required to be at least 2 characters</small>
-			<small class="error" ng-show="measureForm.left_biceps.$error.pattern">That is not a valid Left Biceps. Please input a valid Left Biceps.</small>
-			<small class="error" ng-show="measureForm.left_biceps.$error.maxlength">Your Left Biceps cannot be longer than 5 characters</small>
+			<small class="error" ng-show="measureForm.left_biceps.$error.required">
+				{{translations.page.measure.error.left_biceps.required[currentLanguage]}}
+			</small>
+			<small class="error" ng-show="measureForm.left_biceps.$error.minlength">
+				{{translations.page.measure.error.left_biceps.minlength[currentLanguage]}}
+			</small>
+			<small class="error" ng-show="measureForm.left_biceps.$error.pattern">
+				{{translations.page.measure.error.left_biceps.pattern[currentLanguage]}}
+			</small>
+			<small class="error" ng-show="measureForm.left_biceps.$error.maxlength">
+				{{translations.page.measure.error.left_biceps.maxlength[currentLanguage]}}
+			</small>
 		</div>
 	</div>
 	<div class="field--wrapper grid_half">
 		<label for="right_biceps">Right Biceps</label>
 		<input id="right_biceps" name="right_biceps" ng-model="new_right_biceps" placeholder="Right Biceps" ng-minlength="2" ng-maxlength="5" ng-pattern="/\d+/" type="tel">
+		<small>mm</small>
 		<div class="error-container" ng-show="measureForm.right_biceps.$dirty && measureForm.right_biceps.$invalid">
-			<small class="error" ng-show="measureForm.right_biceps.$error.required">Your Right Biceps is required.</small>
-			<small class="error" ng-show="measureForm.right_biceps.$error.minlength">Your Right Biceps is required to be at least 2 characters</small>
-			<small class="error" ng-show="measureForm.right_biceps.$error.pattern">That is not a valid Right Biceps. Please input a valid Right Biceps.</small>
-			<small class="error" ng-show="measureForm.right_biceps.$error.maxlength">Your Right Biceps cannot be longer than 5 characters</small>
+			<small class="error" ng-show="measureForm.right_biceps.$error.required">
+				{{translations.page.measure.error.right_biceps.required[currentLanguage]}}
+			</small>
+			<small class="error" ng-show="measureForm.right_biceps.$error.minlength">
+				{{translations.page.measure.error.right_biceps.minlength[currentLanguage]}}
+			</small>
+			<small class="error" ng-show="measureForm.right_biceps.$error.pattern">
+				{{translations.page.measure.error.right_biceps.pattern[currentLanguage]}}
+			</small>
+			<small class="error" ng-show="measureForm.right_biceps.$error.maxlength">
+				{{translations.page.measure.error.right_biceps.maxlength[currentLanguage]}}
+			</small>
 		</div>
 	</div>
 	<div class="field--wrapper grid_full">
 		<label for="bust">Bust</label>
 		<input id="bust" name="bust" ng-model="new_bust" placeholder="Bust" ng-minlength="3" ng-maxlength="5" ng-pattern="/\d+/" type="tel">
+		<small>mm</small>
 		<div class="error-container" ng-show="measureForm.bust.$dirty && measureForm.bust.$invalid">
-			<small class="error" ng-show="measureForm.bust.$error.required">Your Bust is required.</small>
-			<small class="error" ng-show="measureForm.bust.$error.minlength">Your Bust is required to be at least 3 characters</small>
-			<small class="error" ng-show="measureForm.bust.$error.pattern">That is not a valid Bust. Please input a valid Bust.</small>
-			<small class="error" ng-show="measureForm.bust.$error.maxlength">Your Bust cannot be longer than 5 characters</small>
+			<small class="error" ng-show="measureForm.bust.$error.required">
+				{{translations.page.measure.error.bust.required[currentLanguage]}}
+			</small>
+			<small class="error" ng-show="measureForm.bust.$error.minlength">
+				{{translations.page.measure.error.bust.minlength[currentLanguage]}}
+			</small>
+			<small class="error" ng-show="measureForm.bust.$error.pattern">
+				{{translations.page.measure.error.bust.pattern[currentLanguage]}}
+			</small>
+			<small class="error" ng-show="measureForm.bust.$error.maxlength">
+				{{translations.page.measure.error.bust.maxlength[currentLanguage]}}
+			</small>
 		</div>
 	</div>
 	<div class="field--wrapper grid_full">
 		<label for="tummy">Tummy</label>
 		<input id="tummy" name="tummy" ng-model="new_tummy" placeholder="Tummy"  ng-minlength="3" ng-maxlength="5" ng-pattern="/\d+/" type="tel">
+		<small>mm</small>
 		<div class="error-container" ng-show="measureForm.tummy.$dirty && measureForm.tummy.$invalid">
-			<small class="error" ng-show="measureForm.tummy.$error.required">Your Tummy is required.</small>
-			<small class="error" ng-show="measureForm.tummy.$error.minlength">Your Tummy is required to be at least 3 characters</small>
-			<small class="error" ng-show="measureForm.tummy.$error.pattern">That is not a valid Tummy. Please input a valid Tummy.</small>
-			<small class="error" ng-show="measureForm.tummy.$error.maxlength">Your Tummy cannot be longer than 20 characters</small>
+			<small class="error" ng-show="measureForm.tummy.$error.required">
+				{{translations.page.measure.error.tummy.required[currentLanguage]}}
+			</small>
+			<small class="error" ng-show="measureForm.tummy.$error.minlength">
+				{{translations.page.measure.error.tummy.minlength[currentLanguage]}}
+			</small>
+			<small class="error" ng-show="measureForm.tummy.$error.pattern">
+				{{translations.page.measure.error.tummy.pattern[currentLanguage]}}
+			</small>
+			<small class="error" ng-show="measureForm.tummy.$error.maxlength">
+				{{translations.page.measure.error.tummy.maxlength[currentLanguage]}}
+			</small>
 		</div>
 	</div>
 	<div class="field--wrapper grid_full">
 		<label for="butt">Butt</label>
 		<input id="butt" name="butt" ng-model="new_butt" placeholder="Butt" ng-minlength="3" ng-maxlength="5" ng-pattern="/\d+/" type="tel">
+		<small>mm</small>
 		<div class="error-container" ng-show="measureForm.butt.$dirty && measureForm.butt.$invalid">
-			<small class="error" ng-show="measureForm.butt.$error.required">Your butt is required.</small>
-			<small class="error" ng-show="measureForm.butt.$error.minlength">Your butt is required to be at least 3 characters</small>
-			<small class="error" ng-show="measureForm.butt.$error.pattern">That is not a valid butt. Please input a valid butt.</small>
-			<small class="error" ng-show="measureForm.butt.$error.maxlength">Your butt cannot be longer than 20 characters</small>
+			<small class="error" ng-show="measureForm.butt.$error.required">
+				{{translations.page.measure.error.butt.required[currentLanguage]}}
+			</small>
+			<small class="error" ng-show="measureForm.butt.$error.minlength">
+				{{translations.page.measure.error.butt.minlength[currentLanguage]}}
+			</small>
+			<small class="error" ng-show="measureForm.butt.$error.pattern">
+				{{translations.page.measure.error.butt.pattern[currentLanguage]}}
+			</small>
+			<small class="error" ng-show="measureForm.butt.$error.maxlength">
+				{{translations.page.measure.error.butt.maxlength[currentLanguage]}}
+			</small>
 		</div>
 	</div>
 	<div class="field--wrapper grid_half">
 		<label for="left_thigh">Left Thigh</label>
 		<input id="left_thigh" name="left_thigh" ng-model="new_left_thigh" placeholder="Left Thigh" ng-minlength="3" ng-maxlength="5" ng-pattern="/\d+/" type="tel">
+		<small>mm</small>
 		<div class="error-container" ng-show="measureForm.left_thigh.$dirty && measureForm.left_thigh.$invalid">
-			<small class="error" ng-show="measureForm.left_thigh.$error.required">Your left_thigh is required.</small>
-			<small class="error" ng-show="measureForm.left_thigh.$error.minlength">Your left_thigh is required to be at least 3 characters</small>
-			<small class="error" ng-show="measureForm.left_thigh.$error.pattern">That is not a valid left_thigh. Please input a valid left_thigh.</small>
-			<small class="error" ng-show="measureForm.left_thigh.$error.maxlength">Your left_thigh cannot be longer than 20 characters</small>
+			<small class="error" ng-show="measureForm.left_thigh.$error.required">
+				{{translations.page.measure.error.left_thigh.required[currentLanguage]}}
+			</small>
+			<small class="error" ng-show="measureForm.left_thigh.$error.minlength">
+				{{translations.page.measure.error.left_thigh.minlength[currentLanguage]}}
+			</small>
+			<small class="error" ng-show="measureForm.left_thigh.$error.pattern">
+				{{translations.page.measure.error.left_thigh.pattern[currentLanguage]}}
+			</small>
+			<small class="error" ng-show="measureForm.left_thigh.$error.maxlength">
+				{{translations.page.measure.error.left_thigh.maxlength[currentLanguage]}}
+			</small>
 		</div>
 	</div>
 	<div class="field--wrapper grid_half">
 		<label for="right_thigh">Right Thigh</label>
 		<input id="right_thigh" name="right_thigh" ng-model="new_right_thigh" placeholder="Right Thigh" ng-minlength="3" ng-maxlength="5" ng-pattern="/\d+/" type="tel">
+		<small>mm</small>
 		<div class="error-container" ng-show="measureForm.right_thigh.$dirty && measureForm.right_thigh.$invalid">
-			<small class="error" ng-show="measureForm.right_thigh.$error.required">Your right_thigh is required.</small>
-			<small class="error" ng-show="measureForm.right_thigh.$error.minlength">Your right_thigh is required to be at least 3 characters</small>
-			<small class="error" ng-show="measureForm.right_thigh.$error.pattern">That is not a valid right_thigh. Please input a valid right_thigh.</small>
-			<small class="error" ng-show="measureForm.right_thigh.$error.maxlength">Your right_thigh cannot be longer than 20 characters</small>
+			<small class="error" ng-show="measureForm.right_thigh.$error.required">
+				{{translations.page.measure.error.right_thigh.required[currentLanguage]}}
+			</small>
+			<small class="error" ng-show="measureForm.right_thigh.$error.minlength">
+				{{translations.page.measure.error.right_thigh.minlength[currentLanguage]}}
+			</small>
+			<small class="error" ng-show="measureForm.right_thigh.$error.pattern">
+				{{translations.page.measure.error.right_thigh.pattern[currentLanguage]}}
+			</small>
+			<small class="error" ng-show="measureForm.right_thigh.$error.maxlength">
+				{{translations.page.measure.error.right_thigh.maxlength[currentLanguage]}}
+			</small>
 		</div>
 	</div>
 	<div class="field--wrapper grid_half">
 		<label for="left_calf">Left Calf</label>
 		<input id="left_calf" name="left_calf" ng-model="new_left_calf" placeholder="Left Calf" ng-minlength="2" ng-maxlength="5" ng-pattern="/\d+/" type="tel">
+		<small>mm</small>
 		<div class="error-container" ng-show="measureForm.left_calf.$dirty && measureForm.left_calf.$invalid">
-			<small class="error" ng-show="measureForm.left_calf.$error.required">Your left_calf is required.</small>
-			<small class="error" ng-show="measureForm.left_calf.$error.minlength">Your left_calf is required to be at least 2 characters</small>
-			<small class="error" ng-show="measureForm.left_calf.$error.pattern">That is not a valid left_calf. Please input a valid left_calf.</small>
-			<small class="error" ng-show="measureForm.left_calf.$error.maxlength">Your left_calf cannot be longer than 20 characters</small>
+			<small class="error" ng-show="measureForm.left_calf.$error.required">
+				{{translations.page.measure.error.left_calf.required[currentLanguage]}}
+			</small>
+			<small class="error" ng-show="measureForm.left_calf.$error.minlength">
+				{{translations.page.measure.error.left_calf.minlength[currentLanguage]}}
+			</small>
+			<small class="error" ng-show="measureForm.left_calf.$error.pattern">
+				{{translations.page.measure.error.left_calf.pattern[currentLanguage]}}
+			</small>
+			<small class="error" ng-show="measureForm.left_calf.$error.maxlength">
+				{{translations.page.measure.error.left_calf.maxlength[currentLanguage]}}
+			</small>
 		</div>
 	</div>
 	<div class="field--wrapper grid_half">
 		<label for="right_calf">Right Calf</label>
 		<input id="right_calf" name="right_calf" ng-model="new_right_calf" placeholder="Right Calf" ng-minlength="2" ng-maxlength="5" ng-pattern="/\d+/" type="tel">
+		<small>mm</small>
 		<div class="error-container" ng-show="measureForm.right_calf.$dirty && measureForm.right_calf.$invalid">
-			<small class="error" ng-show="measureForm.right_calf.$error.required">Your right_calf is required.</small>
-			<small class="error" ng-show="measureForm.right_calf.$error.minlength">Your right_calf is required to be at least 2 characters</small>
-			<small class="error" ng-show="measureForm.right_calf.$error.pattern">That is not a valid right_calf. Please input a valid right_calf.</small>
-			<small class="error" ng-show="measureForm.right_calf.$error.maxlength">Your right_calf cannot be longer than 20 characters</small>
+			<small class="error" ng-show="measureForm.right_calf.$error.required">
+				{{translations.page.measure.error.right_calf.required[currentLanguage]}}
+			</small>
+			<small class="error" ng-show="measureForm.right_calf.$error.minlength">
+				{{translations.page.measure.error.right_calf.minlength[currentLanguage]}}
+			</small>
+			<small class="error" ng-show="measureForm.right_calf.$error.pattern">
+				{{translations.page.measure.error.right_calf.pattern[currentLanguage]}}
+			</small>
+			<small class="error" ng-show="measureForm.right_calf.$error.maxlength">
+				{{translations.page.measure.error.right_calf.maxlength[currentLanguage]}}
+			</small>
 		</div>
 	</div>
 
+	<p class="info_paragraph error-container" ng-show="no_values_error">
+		<strong class="error">{{translations.page.measure.error.empty_form[currentLanguage]}}</strong>
+	</p>
 	
 </form>
 <div class="container_12">
-	<p class="info_paragraph error-container" ng-show="no_values_error">
-		<strong class="error">You haven't entered any measurements!</strong>
-	</p>
-
 	<btn data-ng-click="measureUp()" type="positive">Spara mått</btn>
 </div>

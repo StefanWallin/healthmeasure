@@ -230,5 +230,181 @@ document.ngapp.value("translations", {
 			"sv": "Återkoppling",
 			"en": "Feedback"
 		}
+	},
+	"page": {
+		"measure": {
+			"enter_measurements": {
+				"sv": "Ange kroppsdelarnas omkrets i mm",
+				"en": "Enter body measurements in mm"
+			},
+			"error": {
+				"empty_form": {
+					"sv": "Du har inte angett några mått",
+					"en": "You haven't entered any measurements"
+				},
+				"left_bicep": {
+					"required": {
+						"sv": "Vänster biceps måste mätas.",
+						"en": "Your vänster biceps is required."
+					},
+					"minlength": {
+						"sv": "Mått på vänster biceps måste vara minst 2 siffror.",
+						"en": "Your vänster biceps is required to be at least 2 digits."
+					},
+					"maxlength": {
+						"sv": "Mått på vänster biceps får max vara 5 siffror.",
+						"en": "Your vänster biceps cannot be larger than 5 digits."
+					},
+					"pattern": {
+						"sv": "Icke giltigt bicepsmått, 2 till 5 siffror krävs.",
+						"en": "That is not a valid vänster biceps measurment, only 2-5 digits allowed."
+					}
+				},
+				"right_bicep": {
+					"required": {
+						"sv": "Höger biceps måste mätas.",
+						"en": "Your right biceps is required."
+					},
+					"minlength": {
+						"sv": "Mått på höger biceps måste vara minst 2 siffror.",
+						"en": "Your right biceps is required to be at least 2 digits."
+					},
+					"maxlength": {
+						"sv": "Mått på höger biceps får max vara 5 siffror.",
+						"en": "Your right biceps cannot be larger than 5 digits."
+					},
+					"pattern": {
+						"sv": "Icke giltigt bicepsmått, 2 till 5 siffror krävs.",
+						"en": "That is not a valid right biceps measurment, only 2-5 digits allowed."
+					}
+				},
+				"bust": {
+					"required": {
+						"sv": "Du måste mäta bystens omkrets.",
+						"en": "The circumference of your bust is required."
+					},
+					"minlength": {
+						"sv": "Mått på bysten måste vara minst 3 siffror.",
+						"en": "Your bust is required to be at least 3 digits."
+					},
+					"maxlength": {
+						"sv": "Mått på bysten får max vara 5 siffror.",
+						"en": "Your bust cannot be larger than 5 digits."
+					},
+					"pattern": {
+						"sv": "Icke giltigt bystmått, 3 till 5 siffror krävs.",
+						"en": "That is not a valid bust measurment, only 3-5 digits allowed."
+					}
+				},
+				"tummy": {
+					"required": {
+						"sv": "Du måste mäta magens omkrets.",
+						"en": "The circumference of your tummy is required."
+					},
+					"minlength": {
+						"sv": "Magens omkrets måste vara minst 3 siffror.",
+						"en": "Your tummy is required to be at least 3 digits."
+					},
+					"maxlength": {
+						"sv": "Magens omkrets får max vara 5 siffror.",
+						"en": "Your tummy cannot be larger than 5 digits."
+					},
+					"pattern": {
+						"sv": "Icke giltigt magmått, 3 till 5 siffror krävs.",
+						"en": "That is not a valid tummy measurment, only 3-5 digits allowed."
+					}
+				},
+				"butt": {
+					"required": {
+						"sv": "Du måste mäta stussens omkrets.",
+						"en": "The circumference of your butt is required."
+					},
+					"minlength": {
+						"sv": "",
+						"en": "Your Butt is required to be at least 3 digits."
+					},
+					"maxlength": {
+						"sv": "",
+						"en": "Your Butt cannot be larger than 5 digits."
+					},
+					"pattern": {
+						"sv": "",
+						"en": "That is not a valid Butt measurment, only 3-5 digits allowed."
+					}
+				},
+				"left_thigh": {
+					"required": {
+						"sv": "",
+						"en": "Your Left Thigh is required."
+					},
+					"minlength": {
+						"sv": "",
+						"en": "Your Left Thigh is required to be at least 3 digits."
+					},
+					"maxlength": {
+						"sv": "",
+						"en": "Your Left Thigh cannot be larger than 5 digits."
+					},
+					"pattern": {
+						"sv": "",
+						"en": "That is not a valid Left Thigh measurment, only 3-5 digits allowed."
+					}
+				},
+				"right_thigh": {
+					"required": {
+						"sv": "",
+						"en": "Your Right Thigh is required."
+					},
+					"minlength": {
+						"sv": "",
+						"en": "Your Right Thigh is required to be at least 3 digits."
+					},
+					"maxlength": {
+						"sv": "",
+						"en": "Your Right Thigh cannot be larger than 5 digits."
+					},
+					"pattern": {
+						"sv": "",
+						"en": "That is not a valid Right Thigh measurment, only 3-5 digits allowed."
+					}
+				},
+				"left_calf": {
+					"required": {
+						"sv": "",
+						"en": "Your Left Calf is required."
+					},
+					"minlength": {
+						"sv": "",
+						"en": "Your Left Calf is required to be at least 2 digits."
+					},
+					"maxlength": {
+						"sv": "",
+						"en": "Your Left Calf cannot be larger than 5 digits."
+					},
+					"pattern": {
+						"sv": "",
+						"en": "That is not a valid Left Calf measurment, only 2-5 digits allowed."
+					}
+				},
+				"right_calf": {
+					"required": {
+						"sv": "",
+						"en": "Your Right Calf is required."
+					},
+					"minlength": {
+						"sv": "",
+						"en": "Your Right Calf is required to be at least 2 digits."
+					},
+					"maxlength": {
+						"sv": "",
+						"en": "Your Right Calf cannot be larger than 5 digits."
+					},
+					"pattern": {
+						"sv": "",
+						"en": "That is not a valid Right Calf measurment, only 2-5 digits allowed."
+					}
+				}
+			}
+		}
 	}
 });

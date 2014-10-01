@@ -112,16 +112,6 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 			}, 5000);
 			return;
 		}
-		console.log("form", $scope.measureForm);
-		console.log("left_biceps", $scope.measureForm.left_biceps.$error);
-		console.log("right_biceps", $scope.measureForm.right_biceps.$error);
-		console.log("bust", $scope.measureForm.bust.$error);
-		console.log("tummy", $scope.measureForm.tummy.$error);
-		console.log("butt", $scope.measureForm.butt.$error);
-		console.log("left_thigh", $scope.measureForm.left_thigh.$error);
-		console.log("right_thigh", $scope.measureForm.right_thigh.$error);
-		console.log("left_calf", $scope.measureForm.left_calf.$error);
-		console.log("right_calf", $scope.measureForm.right_calf.$error);
 
 		var data = {
 			'date': date,
@@ -361,6 +351,7 @@ function initJqueryBindings(){
 		var $target = jQuery(target);
 		if(target === document.activeElement){
 			$label.addClass(showClass);
+			$label.siblings("small").addClass(showClass);
 			var text = $target.data("placeholder") || "";
 			$target.attr("placeholder", text);
 		} else {
