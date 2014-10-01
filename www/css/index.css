@@ -166,6 +166,8 @@ body {
 	background-color: rgba(255, 255, 255, 0.2);
 }
 .menu li a {
+	display: inline-block;
+	width: 100%;
 	font-size: 18pt;
 	font-weight: 100;
 	color: rgb(255, 255, 255);
