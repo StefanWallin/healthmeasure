@@ -105,16 +105,18 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 
 	$scope.measureUp = function () {
 		var dirty_but_empty = function (scope) {
-			if(scope.new_left_biceps) return false;
-			if(scope.new_right_biceps) return false;
-			if(scope.new_bust) return false;
-			if(scope.new_tummy) return false;
-			if(scope.new_butt) return false;
-			if(scope.new_left_thigh) return false;
-			if(scope.new_right_thigh) return false;
-			if(scope.new_left_calf) return false;
-			if(scope.new_right_calf) return false;
-			return true;
+			var returnValue = true;
+			if(scope.new_left_biceps) returnValue = false;
+			if(scope.new_right_biceps) returnValue = false;
+			if(scope.new_bust) returnValue = false;
+			if(scope.new_tummy) returnValue = false;
+			if(scope.new_butt) returnValue = false;
+			if(scope.new_left_thigh) returnValue = false;
+			if(scope.new_right_thigh) returnValue = false;
+			if(scope.new_left_calf) returnValue = false;
+			if(scope.new_right_calf) returnValue = false;
+			console.log(returnValue);
+			return returnValue;
 		};
 		var date = new Date();
 
