@@ -289,9 +289,11 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 
 		addMeasurement: function (measurement) {
 			m = this.addDataPoint(m, "measurements", measurement);
+			return m;
 		},
 		addWeight: function (weight) {
 			w = this.addDataPoint(w, "weights", weight);
+			return w;
 		},
 
 
