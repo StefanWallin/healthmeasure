@@ -1,0 +1,18 @@
+User
+====
+uid
+loginhandle
+loginprovider 
+
+
+Muscles
+=======
+left biceps
+right biceps
+bust
+tummy
+butt
+left thigh
+right thigh
+left calf
+right calf
