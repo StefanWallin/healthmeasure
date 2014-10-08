@@ -140,11 +140,10 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 			'left_calf': $scope.new_left_calf || 0,
 			'right_calf': $scope.new_right_calf || 0
 		};
-		// console.log("Saving measurements: ", data);
 		backend.addMeasurement(data);
 		var page = "report";
 
-		// $location.url(page);
+		$location.url(page);
 	};
 }]).controller('WeighCtrl', ['$scope', 'backend', '$location',  function($scope, backend, $location) {
 	initJqueryBindings();
