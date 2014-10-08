@@ -70,6 +70,37 @@ body {
 	color: white;
 	line-height: 69px;
 }
+.period_stats_heading {
+	display: block;
+	width: 100%;
+	background-color: #77bedd;
+	line-height: 28px;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	font-size: 16px;
+	font-weight: 100;
+}
+.stats_section {
+	background-color: #58aed4;
+	background-image: linear-gradient(top, #58aed4 0%, #69b6d8 51%);
+	background-image:-webkit-linear-gradient(top, #58aed4 0%, #69b6d8 51%);
+	background-image:-ms-linear-gradient(top, #58aed4 0%, #69b6d8 51%);
+	background-image:-webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0, #58aed4),
+		color-stop(0.51, #69b6d8)
+	);
+	height: 108px;
+	display: block;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	border-bottom: 2px solid #a5d3e8;
+
+}
 
 .backbutton {
 	position: absolute;
@@ -113,7 +144,18 @@ body {
 	50% { opacity: 0.4; }
 	to { opacity: 1.0; }
 }
- 
+table.stats {
+	padding: 1em;
+	text-align: center;
+}
+.stats_value td {
+	font-size: 18px;
+}
+
+.fullwidth {
+	width: 100%;
+}
+
 .btn {
 	border: 0;
 	display: block;

@@ -238,6 +238,12 @@ document.ngapp.value("translations", {
 				"en": "Enter body measurements in mm"
 			},
 			"form": {
+				"biceps": {
+					"label": {
+						"sv": "Överarm",
+						"en": "Biceps"
+					}
+				},
 				"left_biceps": {
 					"label": {
 						"sv": "Vänster överarm",
@@ -268,6 +274,12 @@ document.ngapp.value("translations", {
 						"en": "Butt"
 					}
 				},
+				"thigh": {
+					"label": {
+						"sv": "Lår",
+						"en": "Thigh"
+					}
+				},
 				"left_thigh": {
 					"label": {
 						"sv": "Vänster lår",
@@ -278,6 +290,12 @@ document.ngapp.value("translations", {
 					"label": {
 						"sv": "Höger lår",
 						"en": "Right Thigh"
+					}
+				},
+				"calf": {
+					"label": {
+						"sv": "Vad",
+						"en": "Calf"
 					}
 				},
 				"left_calf": {

@@ -70,12 +70,13 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 		.otherwise({
 			redirectTo:'/'
 		});
-}).controller('MainCtrl', ['$scope', '$route', '$rootScope', 'translations', function($scope, $route, $rootScope, translations) {
+}).controller('MainCtrl', ['$scope', '$route', '$rootScope', 'translations', 'settings', function($scope, $route, $rootScope, translations, settings) {
 	$rootScope.location = {
 	baseUrl: $('base').attr('href')
 	};
 
 	$scope.translations = translations;
+	$scope.settings = settings;
 	$scope.currentLanguage = navigator.language.substr(0,2);
 	// alert(navigator.language.substr(0,2));
 

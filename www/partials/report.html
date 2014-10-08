@@ -1,1 +1,34 @@
 <h2 class="main_heading">{{translations.menu.report[currentLanguage]}}</h2>
+<section class="stats_section" ng-repeat="measurements in measurementsData">
+	<h3 class="period_stats_heading" ng-if="shouldShowHeader($index)">V. {{measurements.date|weekly}}</h3>
+	<table class="fullwidth stats">
+		<tr>
+			<th>{{translations.page.measure.form.biceps.label[currentLanguage]}}</th>
+			<th>{{translations.page.measure.form.bust.label[currentLanguage]}}</th>
+			<th>{{translations.page.measure.form.tummy.label[currentLanguage]}}</th>
+			<th>{{translations.page.measure.form.butt.label[currentLanguage]}}</th>
+			<th>{{translations.page.measure.form.thigh.label[currentLanguage]}}</th>
+			<th>{{translations.page.measure.form.calf.label[currentLanguage]}}</th>
+		</tr>
+		<tr class="stats_value">
+			<td>{{average(measurements.left_biceps,measurements.right_biceps)}}</td>
+			<td>{{measurements.bust}}</td>
+			<td>{{measurements.tummy}}</td>
+			<td>{{measurements.butt}}</td>
+			<td>{{average(measurements.left_thigh,measurements.right_thigh)}}</td>
+			<td>{{average(measurements.left_calf,measurements.right_calf)}}</td>
+		</tr>
+		<tr>
+			<td>mm</td>
+			<td>mm</td>
+			<td>mm</td>
+			<td>mm</td>
+			<td>mm</td>
+			<td>mm</td>
+		</tr>
+	</table>
+
+		
+	</pre>
+</section>
+
