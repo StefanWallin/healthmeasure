@@ -205,6 +205,10 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 	return function(dateString) {
 		return moment(dateString).fromNow();
 	};
+}).filter('reverse', function() {
+  return function(items) {
+    return items.slice().reverse();
+  };	
 }).factory('graphdata', function(){
 	var graphdata = {
 		getTableData: function(array, x_key, y_key) {
