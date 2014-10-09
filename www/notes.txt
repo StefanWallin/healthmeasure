@@ -16,3 +16,15 @@ left thigh
 right thigh
 left calf
 right calf
+
+Todo
+======
+* User settings on which body parts should be required/visible.
+* Display improvement over time.
+* Create graphs for data visualization over time.
+* Create settings page to accompany for language switching.
+* Set up periodical push notification reminders to MeasureUp!
+* Make sure vibration works when errors occur!
+* Report Weight into HealthKit.
+* Set up some simple API/server storage/sync of data based on appleID or something.
+* Create data export functionality.
