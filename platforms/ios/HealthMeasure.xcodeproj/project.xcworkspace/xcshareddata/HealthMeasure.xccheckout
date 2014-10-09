@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>EF3C881C-5878-412C-B98E-0D8E45B1A972</string>
+	<string>7970924B-F955-4559-BF20-121D639CE825</string>
 	<key>IDESourceControlProjectName</key>
 	<string>HealthMeasure</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>D57CC145-E7D2-4CAD-AC32-C2E1ED937185</key>
-		<string>ssh://github.com/StefanWallin/healthmeasure.git</string>
+		<key>45D3F227B5C002ED983B26B54E8FA3E65B89596B</key>
+		<string>github.com:StefanWallin/healthmeasure.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>platforms/ios/HealthMeasure.xcodeproj/project.xcworkspace</string>
+	<string>platforms/ios/HealthMeasure.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>D57CC145-E7D2-4CAD-AC32-C2E1ED937185</key>
+		<key>45D3F227B5C002ED983B26B54E8FA3E65B89596B</key>
 		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/StefanWallin/healthmeasure.git</string>
+	<string>github.com:StefanWallin/healthmeasure.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>D57CC145-E7D2-4CAD-AC32-C2E1ED937185</string>
+	<string>45D3F227B5C002ED983B26B54E8FA3E65B89596B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>D57CC145-E7D2-4CAD-AC32-C2E1ED937185</string>
+			<string>45D3F227B5C002ED983B26B54E8FA3E65B89596B</string>
 			<key>IDESourceControlWCCName</key>
 			<string>healthmeasure</string>
 		</dict>

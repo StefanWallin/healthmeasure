@@ -1,31 +1,20 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
 * {
 	-webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
+body, input {
+	font-family: 'Exo', sans-serif;
+	font-weight: 100;
+}
 body {
 	-webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
 	-webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
 	-webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-	background-color:#66b5d8;
-	background-image:linear-gradient(top, #66b5d8 0%, #339ccb 51%);
+	background-color: #66b5d8;
+	background-image: linear-gradient(top, #66b5d8 0%, #339ccb 51%);
 	background-image:-webkit-linear-gradient(top, #66b5d8 0%, #339ccb 51%);
 	background-image:-ms-linear-gradient(top, #66b5d8 0%, #339ccb 51%);
 	background-image:-webkit-gradient(
@@ -36,7 +25,8 @@ body {
 		color-stop(0.51, #339ccb)
 	);
 	background-attachment:fixed;
-	font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+	color: white;
+	/*font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;*/
 	font-size:12px;
 	height:100%;
 	margin:0px;
@@ -46,10 +36,18 @@ body {
 	padding-bottom: 2.5em;
 }
 
-#logo {
-	height: 6vh;
-	margin: 20px auto;
+.info_paragraph {
+	text-align: center;
 	display: block;
+	margin-bottom: 1.5em;
+}
+
+.logo.main_heading {
+	line-height: 69px;
+	font-weight: 100;
+	font-size: 22pt;
+	display: block;
+	margin-top: 4px;
 }
 
 /* Portrait layout (default) */
@@ -64,13 +62,43 @@ body {
 
 .main_heading {
 	font-size:18px;
-	font-weight:normal;
-	margin:0px;
+	font-weight:100;
+	margin: 0;
 	overflow:visible;
-	padding:0px;
+	padding: 0;
 	text-align:center;
 	color: white;
 	line-height: 69px;
+}
+.period_stats_heading {
+	display: block;
+	width: 100%;
+	background-color: #77bedd;
+	line-height: 28px;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	font-size: 16px;
+	font-weight: 100;
+}
+.stats_section {
+	background-color: #58aed4;
+	background-image: linear-gradient(top, #58aed4 0%, #69b6d8 51%);
+	background-image:-webkit-linear-gradient(top, #58aed4 0%, #69b6d8 51%);
+	background-image:-ms-linear-gradient(top, #58aed4 0%, #69b6d8 51%);
+	background-image:-webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0, #58aed4),
+		color-stop(0.51, #69b6d8)
+	);
+	display: block;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	border-bottom: 2px solid #a5d3e8;
+
 }
 
 .backbutton {
@@ -79,19 +107,19 @@ body {
 	left: 0;
 	font-size: 39px;
 	line-height: 61px;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
 	color: rgb(255, 255, 255);
 	text-decoration: none;
 }
 
 .event {
-	border-radius:4px;
-	-webkit-border-radius:4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
 	color:#FFFFFF;
 	font-size:12px;
-	margin:0px 30px;
-	padding:2px 0px;
+	margin: 0 30px;
+	padding:2px 0;
 }
 
 .event.listening {
@@ -115,31 +143,167 @@ body {
 	50% { opacity: 0.4; }
 	to { opacity: 1.0; }
 }
- 
+table.stats {
+	padding: 1em;
+	text-align: center;
+}
+.stats_value td {
+	font-size: 18px;
+}
+
+.fullwidth {
+	width: 100%;
+}
+
+.btn {
+	border: 0;
+	display: block;
+	min-height: 44px;
+	line-height: 44px;
+	font-weight: lighter;
+	font-size: 18pt;
+}
+.btn-fullwidth {
+	width: 100%;
+}
+.btn-positive {
+	background: #1ecd97;
+	background-image: -webkit-linear-gradient(top, #1edaaf, #1ecd97);
+	background-image: -moz-linear-gradient(top, #1edaaf, #1ecd97);
+	background-image: -ms-linear-gradient(top, #1edaaf, #1ecd97);
+	background-image: -o-linear-gradient(top, #1edaaf, #1ecd97);
+	background-image: linear-gradient(top, #1edaaf, #1ecd97);
+	color: white;
+	-o-transition: opacity 0.35s; /* For Opera 10.5 to 12.1 */
+	-moz-transition: opacity 0.35s; /* For Firefox 4 to 16.0 */
+	-webkit-transition: opacity 0.35s; /* For Safari 3.1 to 6.0 & Chrome 4.0 to 26.0 */
+	transition: opacity 0.35s;
+}
+.btn_active {
+	opacity: 0.85;
+}
+
 .blink {
-	animation:fade 3000ms infinite;
-	-webkit-animation:fade 3000ms infinite;
+	-webkit-animation: fade 3000ms infinite;
+	-moz-animation: fade 3000ms infinite;
+	animation: fade 3000ms infinite;
 }
 
 .menu {
 	margin: 0;
 	padding: 0;
 	text-align: center;
+	border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .menu li {
 	list-style: none;
-	border-bottom: 1px solid rgb(255, 255, 255);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 	width: 100%;
 	margin: 0;
 	-webkit-margin-before: 0;
 	-webkit-margin-start: 0;
-	background-color: rgba(255, 255, 255, 0.25);
+	-moz-margin-start: 0;
+	background-color: rgba(255, 255, 255, 0.2);
 }
 .menu li a {
+	display: inline-block;
+	width: 100%;
 	font-size: 18pt;
-	font-weight: lighter;
+	font-weight: 100;
 	color: rgb(255, 255, 255);
 	line-height: 44pt;
 	text-decoration: none;
+}
+
+.field--wrapper {
+	position:relative;
+	margin-top: 12px;
+	margin-bottom: 6px;
+}
+.field--wrapper input {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background: transparent;
+	color: rgb(255, 255, 255);
+	border-radius: 0;
+	padding: 6px;
+	font-size: 16px;
+	width: 100%;
+	
+	border: 0 solid rgb(255, 255, 255);
+	border-left: 1px dotted white;
+}
+.field--wrapper input:focus {
+	outline: none;
+	border-left: 3px solid white;
+}
+
+.field--wrapper input.ng-dirty.ng-invalid {
+	border-color: #f04e94;
+}
+.field--wrapper  {
+	color: white;
+}
+
+.field--wrapper ::-webkit-input-placeholder {
+   color: white;
+}
+
+.field--wrapper :-moz-placeholder { /* Firefox 18- */
+   color: white;  
+}
+
+.field--wrapper ::-moz-placeholder {  /* Firefox 19+ */
+   color: white;  
+}
+
+.field--wrapper :-ms-input-placeholder {  
+   color: white;  
+}
+
+
+.field--wrapper label {
+	position:absolute;
+	top:13px;
+	left:5px;
+	font-size:11px;
+	color:white;
+	transition: all 0.5s linear;
+	opacity:0;
+	/*font-weight:bold;*/
+}
+.field--wrapper label.on {
+	color: white;
+}
+.field--wrapper label.show {
+	top: -12px;
+	left: -1px;
+	opacity:1;
+}
+
+.field--wrapper small {
+	transition: all 0.5s linear;
+	opacity:0;
+	position: absolute;
+	right: 10px;
+	top: 16px;
+	text-transform: none;
+	letter-spacing: 2px;
+}
+.field--wrapper small.show {
+	opacity: 1;
+}
+
+
+.error-container.info_paragraph {
+	clear: left;
+	width: 100%;
+	float: left;
+	background: hsla(199, 75%, 30%, 1.0);
+	border-radius: 4px;
+	margin: 0 0.2em;
+	margin-bottom: 1em;
+	padding: 0.5em;
+
 }

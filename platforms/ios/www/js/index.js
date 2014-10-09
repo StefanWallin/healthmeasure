@@ -70,12 +70,13 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 		.otherwise({
 			redirectTo:'/'
 		});
-}).controller('MainCtrl', ['$scope', '$route', '$rootScope', 'translations', function($scope, $route, $rootScope, translations) {
+}).controller('MainCtrl', ['$scope', '$route', '$rootScope', 'translations', 'settings', function($scope, $route, $rootScope, translations, settings) {
 	$rootScope.location = {
 	baseUrl: $('base').attr('href')
 	};
 
 	$scope.translations = translations;
+	$scope.settings = settings;
 	$scope.currentLanguage = navigator.language.substr(0,2);
 	// alert(navigator.language.substr(0,2));
 
@@ -85,7 +86,7 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 		}
 		return false;
 	};
-}]).controller('MeasureCtrl', ['$scope', 'backend', '$location', 'translations', function($scope, backend, $location, translations) {
+}]).controller('MeasureCtrl', ['$scope', 'backend', '$location', '$timeout', 'translations', function($scope, backend, $location, $timeout, translations) {
 	initJqueryBindings();
 	var lastMeasurement = backend.getLastMeasurement();
 	$scope.left_biceps = lastMeasurement.left_biceps;
@@ -99,10 +100,33 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 	$scope.right_calf = lastMeasurement.right_calf;
 	$scope.translations = translations;
 	$scope.currentLanguage = navigator.language.substr(0,2);
-
+	$scope.clicked = false;
+	$scope.no_values_error = false;
 
 	$scope.measureUp = function () {
+		var dirty_but_empty = function (scope) {
+			var returnValue = true;
+			if(scope.new_left_biceps) returnValue = false;
+			if(scope.new_right_biceps) returnValue = false;
+			if(scope.new_bust) returnValue = false;
+			if(scope.new_tummy) returnValue = false;
+			if(scope.new_butt) returnValue = false;
+			if(scope.new_left_thigh) returnValue = false;
+			if(scope.new_right_thigh) returnValue = false;
+			if(scope.new_left_calf) returnValue = false;
+			if(scope.new_right_calf) returnValue = false;
+			console.log(returnValue);
+			return returnValue;
+		};
 		var date = new Date();
+
+		if($scope.measureForm.$pristine || dirty_but_empty($scope)) {
+			$scope.no_values_error = true;
+			$timeout(function (argument) {
+				$scope.no_values_error = false;
+			}, 5000);
+			return;
+		}
 
 		var data = {
 			'date': date,
@@ -118,6 +142,7 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 		};
 		backend.addMeasurement(data);
 		var page = "report";
+
 		$location.url(page);
 	};
 }]).controller('WeighCtrl', ['$scope', 'backend', '$location',  function($scope, backend, $location) {
@@ -180,6 +205,10 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 	return function(dateString) {
 		return moment(dateString).fromNow();
 	};
+}).filter('reverse', function() {
+  return function(items) {
+    return items.slice().reverse();
+  };	
 }).factory('graphdata', function(){
 	var graphdata = {
 		getTableData: function(array, x_key, y_key) {
@@ -195,23 +224,23 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 				'y_max': 0,
 				'values': []
 			};
-			result['x_min'] = array[0][x_key];
-			result['x_max'] = array[0][x_key];
-			result['y_min'] = array[0][y_key];
-			result['y_max'] = array[0][y_key];
+			result.x_min= array[0][x_key];
+			result.x_max = array[0][x_key];
+			result.y_min = array[0][y_key];
+			result.y_max = array[0][y_key];
 			for(var i = 0; i < array.length; i++) {
 				var point = array[i];
-				if(point[x_key] < result['x_min']) {
-					result['x_min'] = point[x_key];
+				if(point[x_key] < result.x_min) {
+					result.x_min = point[x_key];
 				}
-				if(point[x_key] > result['x_max']){
-					result['x_max'] = point[x_key];
+				if(point[x_key] > result.x_max){
+					result.x_max = point[x_key];
 				}
-				if(point[y_key] < result['y_min']) {
-					result['y_min'] = point[y_key];
+				if(point[y_key] < result.y_min) {
+					result.y_min = point[y_key];
 				}
-				if(point[y_key] > result['y_max']){
-					result['y_max'] = point[y_key];
+				if(point[y_key] > result.y_max){
+					result.y_max = point[y_key];
 				}
 				result.values.push({
 					x: point[x_key],
@@ -264,9 +293,11 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 
 		addMeasurement: function (measurement) {
 			m = this.addDataPoint(m, "measurements", measurement);
+			return m;
 		},
 		addWeight: function (weight) {
 			w = this.addDataPoint(w, "weights", weight);
+			return w;
 		},
 
 
@@ -308,18 +339,38 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 
 	};
 	return backend;
+}).directive('btn',function () {
+	return {
+		restrict: 'E',
+		transclude: true,
+		controller: function($scope, $timeout) {
+			$scope.clicked = false;
+			$scope.btnClick = function(){
+				$scope.clicked = true;
+				$timeout(function() {
+					$scope.clicked = false;
+				}, 350);
+			};
+		},
+		scope: {
+			action: "&ngClick",
+			type: "@type"
+		},
+		template: "<button data-ng-click='[action(), btnClick()]' ng-transclude class='btn btn-fullwidth btn-{{type}}' ng-class='{btn_active: clicked}'></button>"
+	};
 });
 
 function initJqueryBindings(){
 	var onClass = "on";
 	var showClass = "show";
 
-	jQuery(".floatlabel > input", document).bind("checkval",function(evt) {
+	jQuery(".field--wrapper > input", document).bind("checkval",function(evt) {
 		var $label = jQuery(this).prev("label");
 		var target = evt.target;
 		var $target = jQuery(target);
 		if(target === document.activeElement){
 			$label.addClass(showClass);
+			$label.siblings("small").addClass(showClass);
 			var text = $target.data("placeholder") || "";
 			$target.attr("placeholder", text);
 		} else {

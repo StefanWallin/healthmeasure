@@ -122,6 +122,7 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 
 		if($scope.measureForm.$pristine || dirty_but_empty($scope)) {
 			$scope.no_values_error = true;
+			navigator.vibrate(3000);
 			$timeout(function (argument) {
 				$scope.no_values_error = false;
 			}, 5000);
