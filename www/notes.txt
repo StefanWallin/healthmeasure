@@ -24,7 +24,7 @@ Todo
 * Create graphs for data visualization over time.
 * Create settings page to accompany for language switching.
 * Set up periodical push notification reminders to MeasureUp!
-* Make sure vibration works when errors occur!
-* Report Weight into HealthKit.
 * Set up some simple API/server storage/sync of data based on appleID or something.
 * Create data export functionality.
+* Report Weight into HealthKit.
+* Make sure vibration works when errors occur! ---> Need to wait for Cordova 3.7.0 or patch the js -> https://issues.apache.org/jira/browse/CB-6911

@@ -31,9 +31,9 @@
 
         <title>Hälsomått</title>
     </head>
-    <body data-ng-controller="MainCtrl">
-        <a href="#/" id="back" class="backbutton" data-ng-hide="isOnMainPage()">&lt;</a>
-        <div data-ng-view class="wrapper" data-role="page" data-url="{{location.baseUrl}}"></div>
+    <body ng-controller="MainCtrl">
+        <a href="#/" id="back" class="backbutton" ng-hide="isOnMainPage()">&lt;</a>
+        <div ng-view class="wrapper" data-role="page" data-url="{{location.baseUrl}}"></div>
 
         <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="js/cordova.js"></script>

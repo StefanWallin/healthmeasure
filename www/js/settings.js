@@ -5,8 +5,10 @@ document.ngapp.value("settings", {
 			"weigh": false,
 			"exercise": false,
 			"report": true,
-			"settings": false,
+			"settings": true,
 			"feedback": false
-		}
+		},
+		"available_languages": ["en","sv"],
+		"default_language": 0 // this array position refers to the available_languages array.
 	}
 });

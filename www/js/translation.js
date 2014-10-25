@@ -232,6 +232,34 @@ document.ngapp.value("translations", {
 		}
 	},
 	"page": {
+		"settings": {
+			"choose_language": {
+				"sv": "Välj språk",
+				"en": "Choose Language"
+			},
+			"erase_header": {
+				"sv": "Töm användardata",
+				"en": "Empty user data"
+			},
+			"erase_paragraph": {
+				"sv": "",
+				"en": ""
+			},
+			"erase_button": {
+				"sv": "Radera all användardata",
+				"en": "Erease all user data"
+			},
+			"languages": {
+				"sv": {
+					"sv": "Svenska",
+					"en": "Swedish"
+				},
+				"en": {
+					"sv": "Engelska",
+					"en": "English"
+				}
+			}
+		},
 		"measure": {
 			"enter_measurements": {
 				"sv": "Ange kroppsdelarnas omkrets i mm",

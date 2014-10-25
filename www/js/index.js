@@ -70,16 +70,17 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 		.otherwise({
 			redirectTo:'/'
 		});
-}).controller('MainCtrl', ['$scope', '$route', '$rootScope', 'translations', 'settings', function($scope, $route, $rootScope, translations, settings) {
+}).controller('MainCtrl', ['$scope', '$route', '$rootScope', 'translations', 'settings', 'backend', function($scope, $route, $rootScope, translations, settings, backend) {
 	$rootScope.location = {
 	baseUrl: $('base').attr('href')
 	};
 
 	$scope.translations = translations;
 	$scope.settings = settings;
-	$scope.currentLanguage = navigator.language.substr(0,2);
-	// alert(navigator.language.substr(0,2));
-
+	$scope.currentLanguage = backend.getLanguage();
+	$scope.setCurrentLanguage = function(language) {
+		backend.setCurrentLanguage($scope, settings, language);
+	};
 	$scope.isOnMainPage = function() {
 		if($route.current && $route.current.templateUrl === mainTemplate) {
 			return true;
@@ -98,8 +99,6 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 	$scope.right_thigh = lastMeasurement.right_thigh;
 	$scope.left_calf = lastMeasurement.left_calf;
 	$scope.right_calf = lastMeasurement.right_calf;
-	$scope.translations = translations;
-	$scope.currentLanguage = navigator.language.substr(0,2);
 	$scope.clicked = false;
 	$scope.no_values_error = false;
 
@@ -171,8 +170,6 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 }]).controller('ExerciseCtrl', ['$scope', '$routeParams', 'activityData', 'translations', function($scope, $routeParams, activityData, translations) {
 	initJqueryBindings();
 	$scope.activityData = activityData;
-	$scope.translations = translations;
-	$scope.currentLanguage = navigator.language.substr(0,2);
 	$scope.params = $routeParams;
 	
 }]).controller('ReportCtrl', ['$scope', 'backend', 'graphdata', function($scope, backend, graphdata) {
@@ -252,7 +249,7 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 		}
 	};
 	return graphdata;
-}).factory('backend', function() {
+}).factory('backend', ['settings' , function(settings) {
 	var m = null; // Measurments cache object
 	var w = null; // Weights cache object
 	var backend = {
@@ -335,12 +332,31 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 		},
 		clearDataPoints: function (d, key) {
 			localStorage.setItem(key, JSON.stringify(d));
+		},
+
+
+		getLanguage: function () {
+			var selectedLanguage = localStorage.getItem("selectedLanguage");
+			if(selectedLanguage === null || selectedLanguage === "") {
+				// TODO, make sure this works as properly.
+				selectedLanguage = navigator.language.substr(0,2);
+			}
+			if(settings.app.available_languages.indexOf(selectedLanguage) == -1) {
+				// Default case when selected language isn't available(when indexOf returns -1)
+				selectedLanguage = settings.app.available_languages[settings.app.default_language];
+			}
+			return selectedLanguage;
+		},
+		setCurrentLanguage: function ($scope, settings, language) {
+			// Checking if the selected language exists in the available language. indexOf returns '-1' if it doesn't.
+			if(settings.app.available_languages.indexOf(language) != -1) {
+				$scope.currentLanguage = language;
+				localStorage.setItem("selectedLanguage", language);
+			}
 		}
-
-
 	};
 	return backend;
-}).directive('btn',function () {
+}]).directive('btn',function () {
 	return {
 		restrict: 'E',
 		transclude: true,
@@ -348,6 +364,7 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 			$scope.clicked = false;
 			$scope.btnClick = function(){
 				$scope.clicked = true;
+
 				$timeout(function() {
 					$scope.clicked = false;
 				}, 350);
@@ -357,7 +374,7 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 			action: "&ngClick",
 			type: "@type"
 		},
-		template: "<button data-ng-click='[action(), btnClick()]' ng-transclude class='btn btn-fullwidth btn-{{type}}' ng-class='{btn_active: clicked}'></button>"
+		template: "<button ng-click='[action(), btnClick()]' ng-transclude class='btn btn-fullwidth btn-{{type}}' ng-class='{btn_active: clicked}'></button>"
 	};
 });
 
