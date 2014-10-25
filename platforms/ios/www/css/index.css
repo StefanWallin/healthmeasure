@@ -179,6 +179,19 @@ table.stats {
 	-webkit-transition: opacity 0.35s; /* For Safari 3.1 to 6.0 & Chrome 4.0 to 26.0 */
 	transition: opacity 0.35s;
 }
+.btn-negative {
+	background: #f7575b;
+	background-image: -webkit-linear-gradient(top, #f7575b, #f93439);
+	background-image: -moz-linear-gradient(top, #f7575b, #f93439);
+	background-image: -ms-linear-gradient(top, #f7575b, #f93439);
+	background-image: -o-linear-gradient(top, #f7575b, #f93439);
+	background-image: linear-gradient(top, #f7575b, #f93439);
+	color: white;
+	-o-transition: opacity 0.35s; /* For Opera 10.5 to 12.1 */
+	-moz-transition: opacity 0.35s; /* For Firefox 4 to 16.0 */
+	-webkit-transition: opacity 0.35s; /* For Safari 3.1 to 6.0 & Chrome 4.0 to 26.0 */
+	transition: opacity 0.35s;
+}
 .btn_active {
 	opacity: 0.85;
 }
@@ -306,4 +319,40 @@ table.stats {
 	margin-bottom: 1em;
 	padding: 0.5em;
 
+}
+
+.hm-radio  {
+	/*pronounced: ham radio */
+}
+
+.hm-radio input {
+	opacity: 0;
+	position: absolute;
+	cursor: pointer;
+	width: 0;
+	height: 0;
+}
+
+.hm-radio span {
+	display: inline-block;
+	padding: 2em;
+	background-color: hsla(0, 100%, 100%, 0.3);
+	border-radius: 9px;
+	margin: 0 1em;
+	font-weight: normal;
+}
+.hm-radio input[type=radio]:checked + span {
+	background-color: hsla(0, 100%, 100%, 0.9);
+	color: hsl(198, 59%, 62%);
+}
+
+.setting_section {
+	border-bottom: 1px solid hsla(0, 100%, 100%, 0.3);
+	border-top: 1px solid hsla(0, 100%, 100%, 0.3);
+	background-color: hsla(0, 100%, 100%, 0.1);
+	margin: 0;
+	margin-bottom: 1.5em;	
+	padding: 0.5em 0;
+	padding-top: 0;
+	text-align: center;
 }
