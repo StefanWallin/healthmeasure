@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		17D2C09DF50A4C0AA0618024 /* CDVVibration.m in Sources */ = {isa = PBXBuildFile; fileRef = BF16824F4F244CF19DF86F40 /* CDVVibration.m */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
@@ -41,6 +40,7 @@
 		7E7966E71810823500FA85AD /* icon-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DD1810823500FA85AD /* icon-small@2x.png */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
 		F6C6BF6A19E610C300C3999A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6C6BF6919E610C300C3999A /* Images.xcassets */; };
+		A7A6E38A3A2B4B21A6D27A65 /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = F9CF9C0AFD804BBB9F9E8D9D /* CDVLogger.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +108,8 @@
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		F6C6BF6919E610C300C3999A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = HealthMeasure/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = HealthMeasure/config.xml; sourceTree = "<group>"; };
+		F9CF9C0AFD804BBB9F9E8D9D /* CDVLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVLogger.m"; path = "org.apache.cordova.console/CDVLogger.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		0C117596C145403B93A78F73 /* CDVLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVLogger.h"; path = "org.apache.cordova.console/CDVLogger.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +233,8 @@
 			children = (
 				BF16824F4F244CF19DF86F40 /* CDVVibration.m */,
 				7BFF9529941745D48025E98E /* CDVVibration.h */,
+				F9CF9C0AFD804BBB9F9E8D9D /* CDVLogger.m */,
+				0C117596C145403B93A78F73 /* CDVLogger.h */,
 			);
 			name = Plugins;
 			path = HealthMeasure/Plugins;
@@ -427,6 +431,7 @@
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				17D2C09DF50A4C0AA0618024 /* CDVVibration.m in Sources */,
+				A7A6E38A3A2B4B21A6D27A65 /* CDVLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

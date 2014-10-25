@@ -19,6 +19,12 @@
     <feature name="LocalStorage">
         <param name="ios-package" value="CDVLocalStorage" />
     </feature>
+    <feature name="Vibration">
+        <param name="ios-package" value="CDVVibration" />
+    </feature>
+    <feature name="Console">
+        <param name="ios-package" value="CDVLogger" />
+    </feature>
     <name>HealthMeasure</name>
     <description>
         A app that helps you track some of your health vitals.
@@ -28,7 +34,4 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
-    <feature name="Vibration">
-        <param name="ios-package" value="CDVVibration" />
-    </feature>
 </widget>
