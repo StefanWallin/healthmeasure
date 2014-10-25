@@ -261,6 +261,10 @@ document.ngapp.value("translations", {
 			}
 		},
 		"measure": {
+			"save_measurements": {
+				"sv": "Spara mått",
+				"en": "Save measurements"
+			},
 			"enter_measurements": {
 				"sv": "Ange kroppsdelarnas omkrets i mm",
 				"en": "Enter body measurements in mm"
