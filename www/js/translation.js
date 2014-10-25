@@ -242,8 +242,8 @@ document.ngapp.value("translations", {
 				"en": "Empty user data"
 			},
 			"erase_paragraph": {
-				"sv": "",
-				"en": ""
+				"sv": "Om du tömmer din användardata så kan du aldrig mer återhämta den. Den försvinner permanent, både från din telefon och våra servrar.",
+				"en": "If you empty your user data, you will no longer be able to retrieve it. It will be purged from both your phone and our servers."
 			},
 			"erase_button": {
 				"sv": "Radera all användardata",
