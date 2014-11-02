@@ -1,21 +1,6 @@
 <h2 class="main_heading">{{translations.menu.settings[currentLanguage]}}</h2>
-<section class="setting_section">
-	<div class="container_12">
-		<h3 class="setting_header">{{translations.page.settings.choose_language[currentLanguage]}}</h3>
-
-		<label for="lang_{{lang}}" ng-repeat="lang in settings.app.available_languages" class="hm-radio" ng-click="setCurrentLanguage(lang)">
-			<input id="lang_{{lang}}" type="radio" name="language" value="{{translations.page.settings.languages[lang][currentLanguage]}}" 
-				ng-checked="lang == currentLanguage" />
-			<span>{{translations.page.settings.languages[lang][currentLanguage]}}</span>
-		</label>
-	</div>
-</section>
-
-<section class="setting_section">
-	<div class="container_12">
-		<h3 class="setting_header">{{translations.page.settings.erase_header[currentLanguage]}}</h3>
-		<p>{{translations.page.settings.erase_paragraph[currentLanguage]}}</p>
-		<btn ng-click="clearData()" type="negative">{{translations.page.settings.erase_button[currentLanguage]}}</btn>
-	</div>
-</section>
-
+<ul class="menu">
+    <li><a href="#/settings/language">{{translations.settings_menu.change_language[currentLanguage]}}</a></li>
+    <li><a href="#/settings/export">{{translations.settings_menu.export_data[currentLanguage]}}</a></li>
+    <li><a href="#/settings/clear">{{translations.settings_menu.clear_data[currentLanguage]}}</a></li>
+</ul>

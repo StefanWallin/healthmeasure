@@ -205,6 +205,20 @@ document.ngapp.value("translations", {
 			"en": "Healthmeasure"
 		}
 	},
+	"settings_menu": {
+		"change_language": {
+			"sv": "Välj språk",
+			"en": "Choose Language"
+		},
+		"export_data": {
+			"sv": "Exportera mätdata",
+			"en": "Export data"
+		},
+		"clear_data": {
+			"sv": "Rensa mätdata",
+			"en": "Clear data"
+		}
+	},
 	"menu": {
 		"measure": {
 			"sv": "Mät",
@@ -246,8 +260,12 @@ document.ngapp.value("translations", {
 				"en": "If you empty your user data, you will no longer be able to retrieve it. It will be purged from both your phone and our servers."
 			},
 			"erase_button": {
-				"sv": "Radera all användardata",
-				"en": "Erease all user data"
+				"sv": "Radera",
+				"en": "Erease"
+			},
+			"abort_erase_button": {
+				"sv": "Spara",
+				"en": "Save"
 			},
 			"languages": {
 				"sv": {

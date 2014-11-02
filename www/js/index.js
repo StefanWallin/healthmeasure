@@ -67,6 +67,18 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 			controller: 'SettingsCtrl',
 			templateUrl: 'partials/settings.html'
 		})
+		.when('/settings/language', {
+			controller: 'LanguageSettingsCtrl',
+			templateUrl: 'partials/settings_language.html'
+		})
+		.when('/settings/export', {
+			controller: 'ExportCtrl',
+			templateUrl: 'partials/settings_export.html'
+		})
+		.when('/settings/clear', {
+			controller: 'ClearCtrl',
+			templateUrl: 'partials/settings_clear.html'
+		})
 		.otherwise({
 			redirectTo:'/'
 		});
@@ -86,6 +98,9 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 			return true;
 		}
 		return false;
+	};
+	$scope.goBack = function() {
+		history.back()
 	};
 }]).controller('MeasureCtrl', ['$scope', 'backend', '$location', '$timeout', 'translations', function($scope, backend, $location, $timeout, translations) {
 	initJqueryBindings();
@@ -188,6 +203,11 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 	
 }]).controller('SettingsCtrl', ['$scope', 'backend',function($scope, backend) {
 	initJqueryBindings();
+}]).controller('LanguageSettingsCtrl', ['$scope', 'backend', function($scope, backend) {
+
+}]).controller('ExportCtrl', ['$scope', 'backend', function($scope, backend) {
+
+}]).controller('ClearCtrl', ['$scope', 'backend', function($scope, backend) {
 	$scope.clearData = function() {
 		var response=confirm("Vill du verkligen ta bort all sparad data?");
 		if (response === true) {
@@ -195,6 +215,7 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 			backend.clearWeights();
 		}
 	};
+
 }]).filter('weekly', function() {
 	return function(dateString) {
 		return moment(dateString).isoWeek();
