@@ -167,12 +167,7 @@ table.stats {
 	width: 100%;
 }
 .btn-positive {
-	background: #1ecd97;
-	background-image: -webkit-linear-gradient(top, #1edaaf, #1ecd97);
-	background-image: -moz-linear-gradient(top, #1edaaf, #1ecd97);
-	background-image: -ms-linear-gradient(top, #1edaaf, #1ecd97);
-	background-image: -o-linear-gradient(top, #1edaaf, #1ecd97);
-	background-image: linear-gradient(top, #1edaaf, #1ecd97);
+	background: hsla(166, 75%, 48%, 0.9);
 	color: white;
 	-o-transition: opacity 0.35s; /* For Opera 10.5 to 12.1 */
 	-moz-transition: opacity 0.35s; /* For Firefox 4 to 16.0 */
@@ -180,12 +175,7 @@ table.stats {
 	transition: opacity 0.35s;
 }
 .btn-negative {
-	background: #f7575b;
-	background-image: -webkit-linear-gradient(top, #f7575b, #f93439);
-	background-image: -moz-linear-gradient(top, #f7575b, #f93439);
-	background-image: -ms-linear-gradient(top, #f7575b, #f93439);
-	background-image: -o-linear-gradient(top, #f7575b, #f93439);
-	background-image: linear-gradient(top, #f7575b, #f93439);
+	background: hsla(358,90%,65%,0.9);
 	color: white;
 	-o-transition: opacity 0.35s; /* For Opera 10.5 to 12.1 */
 	-moz-transition: opacity 0.35s; /* For Firefox 4 to 16.0 */
