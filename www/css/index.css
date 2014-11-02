@@ -325,7 +325,8 @@ table.stats {
 
 .hm-radio span {
 	display: inline-block;
-	padding: 2em;
+	font-size: 1.3em;
+	padding: 1em;
 	background-color: hsla(0, 100%, 100%, 0.3);
 	border-radius: 9px;
 	margin: 0 1em;
