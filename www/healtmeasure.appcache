@@ -1,40 +1,40 @@
 CACHE MANIFEST
-# v6 - 2014-11-12
-http://localhost:8000/
+# v7 - 2014-11-12
+https://xn--hlsomtt-5wan.se/
 
 #CSS
-http://localhost:8000/css/index.css
-http://localhost:8000/css/angular-csp.css
-http://localhost:8000/css/960gs.css
+https://xn--hlsomtt-5wan.se/css/index.css
+https://xn--hlsomtt-5wan.se/css/angular-csp.css
+https://xn--hlsomtt-5wan.se/css/960gs.css
 
 #JAVASCRIPT
-http://localhost:8000/js/jquery-2.1.1.min.js
-http://localhost:8000/js/cordova.js
-http://localhost:8000/js/cordova_plugins.js
-http://localhost:8000/js/angular.js
-http://localhost:8000/js/angular-route.js
-http://localhost:8000/js/angular-animate.js
-http://localhost:8000/js/moment.js
-http://localhost:8000/js/moment-lang-sv.js
-http://localhost:8000/js/index.js
-http://localhost:8000/js/translation.js
-http://localhost:8000/js/settings.js
-http://localhost:8000/js/activities.js
-http://localhost:8000/js/cordova.js
+https://xn--hlsomtt-5wan.se/js/jquery-2.1.1.min.js
+https://xn--hlsomtt-5wan.se/js/cordova.js
+https://xn--hlsomtt-5wan.se/js/cordova_plugins.js
+https://xn--hlsomtt-5wan.se/js/angular.js
+https://xn--hlsomtt-5wan.se/js/angular-route.js
+https://xn--hlsomtt-5wan.se/js/angular-animate.js
+https://xn--hlsomtt-5wan.se/js/moment.js
+https://xn--hlsomtt-5wan.se/js/moment-lang-sv.js
+https://xn--hlsomtt-5wan.se/js/index.js
+https://xn--hlsomtt-5wan.se/js/translation.js
+https://xn--hlsomtt-5wan.se/js/settings.js
+https://xn--hlsomtt-5wan.se/js/activities.js
+https://xn--hlsomtt-5wan.se/js/cordova.js
 
 #PARTIALS
-http://localhost:8000/partials/excercise.html
-http://localhost:8000/partials/exercise_choose_activity.html
-http://localhost:8000/partials/exercise_choose_group.html
-http://localhost:8000/partials/graph.html
-http://localhost:8000/partials/main.html
-http://localhost:8000/partials/measure.html
-http://localhost:8000/partials/report.html
-http://localhost:8000/partials/settings.html
-http://localhost:8000/partials/settings_clear.html
-http://localhost:8000/partials/settings_export.html
-http://localhost:8000/partials/settings_language.html
-http://localhost:8000/partials/weigh.html
+https://xn--hlsomtt-5wan.se/partials/excercise.html
+https://xn--hlsomtt-5wan.se/partials/exercise_choose_activity.html
+https://xn--hlsomtt-5wan.se/partials/exercise_choose_group.html
+https://xn--hlsomtt-5wan.se/partials/graph.html
+https://xn--hlsomtt-5wan.se/partials/main.html
+https://xn--hlsomtt-5wan.se/partials/measure.html
+https://xn--hlsomtt-5wan.se/partials/report.html
+https://xn--hlsomtt-5wan.se/partials/settings.html
+https://xn--hlsomtt-5wan.se/partials/settings_clear.html
+https://xn--hlsomtt-5wan.se/partials/settings_export.html
+https://xn--hlsomtt-5wan.se/partials/settings_language.html
+https://xn--hlsomtt-5wan.se/partials/weigh.html
 
 #Third Party
 http://fonts.googleapis.com/css?family=Exo:100,200,400,600
