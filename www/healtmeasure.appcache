@@ -1,0 +1,41 @@
+CACHE MANIFEST
+# v6 - 2014-11-12
+http://localhost:8000/
+
+#CSS
+http://localhost:8000/css/index.css
+http://localhost:8000/css/angular-csp.css
+http://localhost:8000/css/960gs.css
+
+#JAVASCRIPT
+http://localhost:8000/js/jquery-2.1.1.min.js
+http://localhost:8000/js/cordova.js
+http://localhost:8000/js/cordova_plugins.js
+http://localhost:8000/js/angular.js
+http://localhost:8000/js/angular-route.js
+http://localhost:8000/js/angular-animate.js
+http://localhost:8000/js/moment.js
+http://localhost:8000/js/moment-lang-sv.js
+http://localhost:8000/js/index.js
+http://localhost:8000/js/translation.js
+http://localhost:8000/js/settings.js
+http://localhost:8000/js/activities.js
+http://localhost:8000/js/cordova.js
+
+#PARTIALS
+http://localhost:8000/partials/excercise.html
+http://localhost:8000/partials/exercise_choose_activity.html
+http://localhost:8000/partials/exercise_choose_group.html
+http://localhost:8000/partials/graph.html
+http://localhost:8000/partials/main.html
+http://localhost:8000/partials/measure.html
+http://localhost:8000/partials/report.html
+http://localhost:8000/partials/settings.html
+http://localhost:8000/partials/settings_clear.html
+http://localhost:8000/partials/settings_export.html
+http://localhost:8000/partials/settings_language.html
+http://localhost:8000/partials/weigh.html
+
+#Third Party
+http://fonts.googleapis.com/css?family=Exo:100,200,400,600
+http://fonts.gstatic.com/s/exo/v4/ek6B72kladJz_Z6o5PEplKCWcynf_cDxXwCLxiixG1c.woff

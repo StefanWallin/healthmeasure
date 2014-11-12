@@ -100,7 +100,7 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 		return false;
 	};
 	$scope.goBack = function() {
-		history.back()
+		history.back();
 	};
 }]).controller('MeasureCtrl', ['$scope', 'backend', '$location', '$timeout', 'translations', function($scope, backend, $location, $timeout, translations) {
 	initJqueryBindings();
