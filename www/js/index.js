@@ -206,7 +206,9 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 }]).controller('LanguageSettingsCtrl', ['$scope', 'backend', function($scope, backend) {
 
 }]).controller('ExportCtrl', ['$scope', 'backend', function($scope, backend) {
-
+	$scope.exportData = function() {
+		console.error("function exportData not yet implemented.");
+	};
 }]).controller('ClearCtrl', ['$scope', 'backend', function($scope, backend) {
 	$scope.clearData = function() {
 		var response=confirm("Vill du verkligen ta bort all sparad data?");

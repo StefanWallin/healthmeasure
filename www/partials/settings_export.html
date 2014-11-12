@@ -1,12 +1,9 @@
 <h2 class="main_heading">{{translations.menu.settings[currentLanguage]}}</h2>
 <section class="setting_section">
 	<div class="container_12">
-		<h3 class="setting_header">{{translations.page.settings.erase_header[currentLanguage]}}</h3>
-		<p>{{translations.page.settings.erase_paragraph[currentLanguage]}}</p>
-		<div class="grid_half">
-			<btn ng-click="clearData()" type="abort">{{translations.page.settings.abort_erase_button[currentLanguage]}}</btn>
-		</div>
-		<div class="grid_half">
-			<btn ng-click="clearData()" type="negative">{{translations.page.settings.erase_button[currentLanguage]}}</btn>
+		<h3 class="setting_header">{{translations.page.settings.export_header[currentLanguage]}}</h3>
+		<p>{{translations.page.settings.export_paragraph[currentLanguage]}}</p>
+		<div class="grid_full">
+			<btn ng-click="exportData()" type="positive">{{translations.page.settings.export_button[currentLanguage]}}</btn>
 		</div>	</div>
 </section>

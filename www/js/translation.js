@@ -261,11 +261,23 @@ document.ngapp.value("translations", {
 			},
 			"erase_button": {
 				"sv": "Radera",
-				"en": "Erease"
+				"en": "Erase"
 			},
 			"abort_erase_button": {
 				"sv": "Spara",
 				"en": "Save"
+			},
+			"export_header": {
+				"sv": "Exportera användardata",
+				"en": "Export user data"
+			},
+			"export_paragraph": {
+				"sv": "När du initierar en export, börjar vi komprimera din data till en liten fil. När det är klart skickar vi dig en nedladdningslänk per epost.",
+				"en": "When you initiate an export, we will start compress your data into a small file. Once that is done, we will send you an email with a download link."
+			},
+			"export_button": {
+				"sv": "Exportera",
+				"en": "Export"
 			},
 			"languages": {
 				"sv": {

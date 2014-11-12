@@ -1,3 +1,4 @@
+/* rename me to settings.js and add any secret config values! */
 document.ngapp.value("settings", { 
 	"app": {
 		"menu_active": {
