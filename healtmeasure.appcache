@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# v8 - 2014-11-13
+# v9 - 2014-11-13
 https://xn--hlsomtt-5wan.se/
 
 #CSS
@@ -24,7 +24,7 @@ https://xn--hlsomtt-5wan.se/js/activities.js
 https://xn--hlsomtt-5wan.se/js/cordova.js
 
 #PLUGINS
-https://xn--hlsomtt-5wan.se/plugins/org.apache.cordova.vibration/www/vibration.js
+https://xn--hlsomtt-5wan.se/js/plugins/org.apache.cordova.vibration/www/vibration.js
 
 #PARTIALS
 https://xn--hlsomtt-5wan.se/partials/excercise.html
