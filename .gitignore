@@ -7,4 +7,4 @@
 # Pods/
 .DS_Store
 platforms/ios/www
-www/js/settings.js
+js/settings.js
