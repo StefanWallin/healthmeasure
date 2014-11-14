@@ -182,7 +182,7 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 		var page = "report";
 		$location.url(page);
 	};
-}]).controller('ExerciseCtrl', ['$scope', '$routeParams', 'activityData', 'translations', function($scope, $routeParams, activityData, translations) {
+}]).controller('ExerciseCtrl', ['$scope', '$routeParams', 'activityData', function($scope, $routeParams, activityData) {
 	initJqueryBindings();
 	$scope.activityData = activityData;
 	$scope.params = $routeParams;
@@ -205,7 +205,18 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 	initJqueryBindings();
 }]).controller('LanguageSettingsCtrl', ['$scope', 'backend', function($scope, backend) {
 
-}]).controller('ExportCtrl', ['$scope', 'backend', function($scope, backend) {
+}]).controller('ExportCtrl', ['$scope', 'backend', 'settings', function($scope, backend, settings) {
+	var storageReady = false;
+	var storage = jStorage({
+		'name': 'dropbox',
+		'appKey': settings.dropbox.app_key, 
+		// 'requireSecure': true,
+		'callback': function(storage, callStatus) {
+			if (callStatus.isOK) {
+				storageReady = true;
+			}
+		}
+	});
 	$scope.exportData = function() {
 		console.error("function exportData not yet implemented.");
 	};
