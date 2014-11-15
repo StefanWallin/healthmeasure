@@ -1,6 +1,7 @@
 CACHE MANIFEST
-# v10 - 2014-11-13
+# v11 - 2014-11-13
 https://xn--hlsomtt-5wan.se/
+https://xn--hlsomtt-5wan.se/auth_dropbox.html
 
 #CSS
 https://xn--hlsomtt-5wan.se/css/index.css
@@ -21,6 +22,7 @@ https://xn--hlsomtt-5wan.se/js/initialize.js
 https://xn--hlsomtt-5wan.se/js/translation.js
 https://xn--hlsomtt-5wan.se/js/settings.js
 https://xn--hlsomtt-5wan.se/js/activities.js
+https://xn--hlsomtt-5wan.se/js/auth_dropbox.js
 
 #LIBRARIES
 https://xn--hlsomtt-5wan.se/js/lib/jStorage.js

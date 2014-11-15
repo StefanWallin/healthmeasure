@@ -207,16 +207,18 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 
 }]).controller('ExportCtrl', ['$scope', 'backend', 'settings', function($scope, backend, settings) {
 	var storageReady = false;
-	var storage = jStorage({
+/*	var storage = jStorage({
 		'name': 'dropbox',
 		'appKey': settings.dropbox.app_key, 
 		// 'requireSecure': true,
 		'callback': function(storage, callStatus) {
+			console.log("got callback",arguments);
 			if (callStatus.isOK) {
 				storageReady = true;
+				storage.set("teststefan.txt", "innehåll i filen va!",function(){});
 			}
 		}
-	});
+	});*/
 	$scope.exportData = function() {
 		console.error("function exportData not yet implemented.");
 	};
