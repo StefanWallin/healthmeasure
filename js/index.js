@@ -236,9 +236,9 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 								}
 							});
 						});
+						$timout($scope.authDropbox, 5000);
 					} else {
-						localStorage.setItem("dropbox_authed", false);
-						window.location.reload("https://xn--hlsomtt-5wan.se/auth_dropbox.html");
+						$scope.authDropbox();
 					}
 				}
 			});		
@@ -248,6 +248,7 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 		}
 	}
 	$scope.authDropbox = function() {
+		localStorage.setItem("dropbox_authed", false);
 		window.location.assign("https://xn--hlsomtt-5wan.se/auth_dropbox.html");
 	};
 	$scope.exportData();
