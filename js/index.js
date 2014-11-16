@@ -238,7 +238,7 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 						});
 					} else {
 						localStorage.setItem("dropbox_authed", false);
-						window.location.reload();
+						window.location.reload("https://xn--hlsomtt-5wan.se/auth_dropbox.html");
 					}
 				}
 			});		
