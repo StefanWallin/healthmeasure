@@ -230,10 +230,10 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 							"measurments": localStorage.getItem("measurements"),
 							"weights": localStorage.getItem("weights")
 						});
-						storage.set("hm.backup.json", data ,function(callStatus){
+						storage.set("hm.backup.json", data ,function(secondStorage, secondCallStatus){
 							console.log(arguments);
 							$scope.isBackupDone = true;
-							if(!callStatus.isOK) {
+							if(!secondCallStatus.isOK) {
 								$scope.backupFailed = true;
 							}
 
