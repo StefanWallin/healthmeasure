@@ -36,6 +36,27 @@ body {
 	width:100%;
 	padding-bottom: 2.5em;
 }
+p {
+	font-family: Helvetica, sans-serif;
+	font-weight: 100;
+	text-transform: none;
+	text-align: left;
+	font-size: 1.1em;
+}
+
+code {
+	font-family: monospace;
+	font-weight: 400;
+	text-transform: none;
+	text-align: left;
+	margin: 1em;
+	margin-top: 0;
+	border-radius: 4px;
+	text-align: center;
+	background-color: rgba(255,255,255, 0.7);
+	color: #333;
+	padding: 0.6em 0.1em;
+}
 
 .info_paragraph {
 	text-align: center;
@@ -43,13 +64,13 @@ body {
 	margin-bottom: 1.5em;
 }
 
-.logo.main_heading {
+/*.logo.main_heading {
 	line-height: 69px;
 	font-weight: 100;
 	font-size: 22pt;
 	display: block;
 	margin-top: 4px;
-}
+}*/
 
 /* Portrait layout (default) */
 .app {
@@ -63,6 +84,7 @@ body {
 
 .main_heading {
 	font-size:18px;
+	font-size: 22pt;
 	font-weight:100;
 	margin: 0;
 	overflow:visible;
@@ -110,6 +132,7 @@ body {
 	line-height: 61px;
 	padding-left: 20px;
 	padding-right: 20px;
+	padding-top: 20px;
 	color: rgb(255, 255, 255);
 	text-decoration: none;
 }

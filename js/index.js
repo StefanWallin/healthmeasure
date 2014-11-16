@@ -206,22 +206,56 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 }]).controller('LanguageSettingsCtrl', ['$scope', 'backend', function($scope, backend) {
 
 }]).controller('ExportCtrl', ['$scope', 'backend', 'settings', function($scope, backend, settings) {
-	var storageReady = false;
-/*	var storage = jStorage({
-		'name': 'dropbox',
-		'appKey': settings.dropbox.app_key, 
-		// 'requireSecure': true,
-		'callback': function(storage, callStatus) {
-			console.log("got callback",arguments);
-			if (callStatus.isOK) {
-				storageReady = true;
-				storage.set("teststefan.txt", "innehåll i filen va!",function(){});
-			}
-		}
-	});*/
+	var storage;
+	$scope.isDropboxAuthed = false;
+	$scope.isBackupDone = false;
+	$scope.hasBackupFailed = false;
+
 	$scope.exportData = function() {
-		console.error("function exportData not yet implemented.");
+		if(backend.isDropboxAuthed()) {
+			console.log("trying to export");
+			$scope.isDropboxAuthed = true;
+			$scope.isBackupDone = false;
+			$scope.hasBackupFailed = false;
+			storage = jStorage({
+				'name': 'dropbox',
+				'appKey': settings.dropbox.app_key, 
+				// 'requireSecure': true,
+				'callback': function(storage, callStatus) {
+					console.log("got callback",arguments);
+					if (callStatus.isOK) {
+						var date = new Date();
+						var data = JSON.stringify({
+							"_comment": "Data export by healthmeasure app on " + date.toISOString() + ". Learn more at https://xn--hlsomtt-5wan.se/",
+							"measurments": localStorage.getItem("measurements"),
+							"weights": localStorage.getItem("weights")
+						});
+						storage.set("hm.backup.json", data ,function(callStatus){
+							if(callStatus.isOK) {
+								$scope.isBackupDone = true;
+							} else {
+								$scope.backupFailed = true;
+							}
+
+						});
+					}
+				}
+			});		
+		} else {
+			console.log("no auth");
+			$scope.isDropboxAuthed = false;
+		}
+	}
+	$scope.authDropbox = function() {
+		window.location.assign("https://xn--hlsomtt-5wan.se/auth_dropbox.html");
 	};
+
+
+	$scope.exportData();
+	$scope.isDropboxAuthed = true;
+	$scope.isBackupDone = true;
+	$scope.hasBackupFailed = true;
+
 }]).controller('ClearCtrl', ['$scope', 'backend', function($scope, backend) {
 	$scope.clearData = function() {
 		var response=confirm("Vill du verkligen ta bort all sparad data?");
@@ -294,6 +328,10 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 
 
 		// Internal API endpoints
+
+		isDropboxAuthed: function() {
+			return localStorage.getItem("dropbox_authed");
+		},
 		
 		getMeasurements: function () {
 			return this.getDataPoints("measurements");
@@ -307,7 +345,7 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 			if(m === null) {
 				m = this.getMeasurements();
 			}
-			if(m.length > 0){
+			if(m.length > 0) {
 				return m[m.length-1];
 			} else {
 				return [];
@@ -317,7 +355,7 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 			if(w === null) {
 				w = this.getWeights();
 			}
-			if(w.length > 0){
+			if(w.length > 0) {
 				return w[w.length-1];
 			} else {
 				return [];

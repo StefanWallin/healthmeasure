@@ -240,6 +240,18 @@ document.ngapp.value("translations", {
 			"sv": "Inställningar",
 			"en": "Settings"
 		},
+		"change_language": {
+			"sv": "Språk",
+			"en": "Language"
+		},
+		"export_data": {
+			"sv": "Export",
+			"en": "Export"
+		},
+		"clear_data": {
+			"sv": "Rensa data",
+			"en": "Clear data"
+		},
 		"feedback": {
 			"sv": "Återkoppling",
 			"en": "Feedback"
@@ -268,16 +280,44 @@ document.ngapp.value("translations", {
 				"en": "Save"
 			},
 			"export_header": {
-				"sv": "Exportera användardata",
-				"en": "Export user data"
+				"awaiting_auth": {
+					"sv": "Aktivera Dropbox",
+					"en": "Activate Dropbox"
+				},
+				"waiting": {
+					"sv": "Export pågår",
+					"en": "Export in progress"
+				},
+				"success": {
+					"sv": "Export lyckad",
+					"en": "Export completed"
+				},
+				"failure": {
+					"sv": "Export misslyckad",
+					"en": "Export failed"
+				}
 			},
 			"export_paragraph": {
-				"sv": "När du initierar en export, börjar vi komprimera din data till en liten fil. När det är klart skickar vi dig en nedladdningslänk per epost.",
-				"en": "When you initiate an export, we will start compress your data into a small file. Once that is done, we will send you an email with a download link."
+				"awaiting_auth": {
+					"sv": "För att göra en export måste du ha ett Dropbox-konto att exportera till. Auktorisera Hälsomått att kommunicera med Dropbox nedan. Observera att vi kommer bara kunna komma åt innehåll i applikationens egna mapp i din Dropbox och inte någon av dina andra filer.",
+					"en": "To make an export, you must have a Dropbox account to export to. Authorize Hälsomått to communicate with Dropbox below. Please note that we will only be able to access content in this applications own folder in your Dropbox and not any of your other files."
+				},
+				"success": {
+					"sv": "Export färdig. Filen hittar du i denna Dropbox-mapp.",
+					"en": "Export finished. The file can be found in this Dropbox folder:"
+				},
+				"failure": {
+					"sv": "Export misslyckades. Kolla så du har internet och försök igen.",
+					"en": "Export failed. Check that you have Internet and try again."
+				}
+			},
+			"auth_button": {
+				"sv": "Auktorisera",
+				"en": "Authorize"
 			},
 			"export_button": {
-				"sv": "Exportera",
-				"en": "Export"
+				"sv": "Exportera igen",
+				"en": "Export again"
 			},
 			"languages": {
 				"sv": {
