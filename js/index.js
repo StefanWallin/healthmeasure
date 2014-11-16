@@ -220,9 +220,7 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 			storage = jStorage({
 				'name': 'dropbox',
 				'appKey': settings.dropbox.app_key, 
-				// 'requireSecure': true,
 				'callback': function(storage, callStatus) {
-					console.log("got callback",arguments);
 					if (callStatus.isOK) {
 						var date = new Date();
 						var data = JSON.stringify({
@@ -230,17 +228,13 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 							"measurments": localStorage.getItem("measurements"),
 							"weights": localStorage.getItem("weights")
 						});
-
-						// Perpetuate the scope further down the callstack.
-						$scope = $scope;
-
 						storage.set("hm.backup.json", data ,function(secondStorage, secondCallStatus){
-							console.log(arguments);
-							$scope.isBackupDone = true;
-							if(!secondCallStatus.isOK) {
-								$scope.backupFailed = true;
-							}
-
+							$scope.$apply(function () {
+								$scope.isBackupDone = true;
+								if(!secondCallStatus.isOK) {
+									$scope.backupFailed = true;
+								}
+							});
 						});
 					}
 				}
