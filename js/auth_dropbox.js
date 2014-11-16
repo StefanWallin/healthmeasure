@@ -8,3 +8,8 @@ jStorage({
 		}
 	}
 });
+setTimeout(function() {
+	if(!localStorage.getItem("dropbox_authed")) {
+		window.location.reload();
+	}
+}, 1000);
