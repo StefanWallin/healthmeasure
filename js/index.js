@@ -249,13 +249,7 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 	$scope.authDropbox = function() {
 		window.location.assign("https://xn--hlsomtt-5wan.se/auth_dropbox.html");
 	};
-
-
 	$scope.exportData();
-	$scope.isDropboxAuthed = true;
-	$scope.isBackupDone = true;
-	$scope.hasBackupFailed = true;
-
 }]).controller('ClearCtrl', ['$scope', 'backend', function($scope, backend) {
 	$scope.clearData = function() {
 		var response=confirm("Vill du verkligen ta bort all sparad data?");
