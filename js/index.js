@@ -236,6 +236,9 @@ document.ngapp = angular.module('healthmeasure', ['ngRoute', 'ngAnimate'])
 								}
 							});
 						});
+					} else {
+						localStorage.setItem("dropbox_authed", false);
+						window.location.reload();
 					}
 				}
 			});		
