@@ -1,0 +1,26 @@
+{
+	"name": "healthmeasure",
+	"version": "0.0.1",
+	"homepage": "https://github.com/StefanWallin/healthmeasure",
+	"authors": [
+		"Stefan Wallin <stefan.w@festiz.com>"
+	],
+	"license": "MIT",
+	"private": true,
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	],
+	"dependencies": {
+		"angular": "~1.3.3",
+		"SlowSlider": "https://github.com/carlbarrdahl/SlowSlider.git",
+		"jStorage": "https://github.com/flowertwig-org/jStorage.git",
+		"jquery": "~2.1.1",
+		"moment": "~2.8.4",
+		"angular-route": "~1.3.3",
+		"angular-animate": "~1.3.3"
+	}
+}

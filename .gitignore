@@ -8,3 +8,7 @@
 .DS_Store
 platforms/ios/www
 js/settings.js
+.gulp-cache
+bower_components/
+node_modules
+
