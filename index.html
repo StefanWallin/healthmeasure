@@ -17,7 +17,7 @@
     specific language governing permissions and limitations
     under the License.
 -->
-<html ng-app="healthmeasure" ng-csp manifest="healtmeasure.appcache">
+<html ng-app="healthmeasure" ng-csp manifest="healthmeasure.appcache">
 <!-- <html ng-app="healthmeasure"> -->
     <head>
         <meta charset="utf-8" />
@@ -25,30 +25,15 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Exo:100,200,400,600" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <link rel="stylesheet" type="text/css" href="css/angular-csp.css" />
-        <link rel="stylesheet" type="text/css" href="css/960gs.css" />
-        <!-- <link rel="stylesheet" type="text/css" href="css/animations.css" /> -->
+        <link rel="stylesheet" type="text/css" href="css/app.css" />
 
         <title>Hälsomått</title>
     </head>
     <body ng-controller="MainCtrl">
         <a href="#/" id="back" class="backbutton" ng-hide="isOnMainPage()">&lt;</a>
         <div ng-view class="wrapper" data-role="page" data-url="{{location.baseUrl}}"></div>
-
-        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="js/cordova.js"></script>
-        <script type="text/javascript" src="js/angular.js"></script>
-        <script type="text/javascript" src="js/angular-route.js"></script>
-        <script type="text/javascript" src="js/angular-animate.js"></script>
-        <script type="text/javascript" src="js/moment.js"></script>
-        <script type="text/javascript" src="js/moment-lang-sv.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript" src="js/translation.js"></script>
-        <script type="text/javascript" src="js/settings.js"></script>
-        <script type="text/javascript" src="js/activities.js"></script>
-        <script type="text/javascript" src="js/lib/jStorage.js"></script>
-        <script type="text/javascript" src="js/lib/jStorage.dropbox.js"></script>
-        <script type="text/javascript" src="js/initialize.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/dropbox_auth.js"></script>
     </body>
 </html>
