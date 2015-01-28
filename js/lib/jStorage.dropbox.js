@@ -11,12 +11,12 @@
     /* Address to JS API Library can be found here: https://www.dropbox.com/developers/datastore/sdks/js : End */
 
     jStorage.providers.dropbox = {
-    	init: function (wrapper, config) {
-        	// As we know that jStorage dropbox storage module requires an appKey, make sure we have it before going any future.
-        	if (!('appKey' in config)) {
-        		throw 'Argument "config" need a property called "appKey". Get yours from: https://dropbox.com/developers/apps';
-        	}
-        	var self = this;
+      init: function (wrapper, config) {
+          // As we know that jStorage dropbox storage module requires an appKey, make sure we have it before going any future.
+          if (!('appKey' in config)) {
+            throw 'Argument "config" need a property called "appKey". Get yours from: https://dropbox.com/developers/apps';
+          }
+          var self = this;
             this._config = config;
             this._hasCallback = config && typeof (config.callback) === "function";
 
@@ -67,11 +67,11 @@
                                 }
                             }
                             if (self._hasCallback) {
-								try{
-	                                self._config.callback(wrapper, callStatus);
-								} catch (e) {
-									// TODO: handle error
-								}
+                try{
+                                  self._config.callback(wrapper, callStatus);
+                } catch (e) {
+                  // TODO: handle error
+                }
                             }
                         });
                     }
@@ -165,33 +165,33 @@
             });
         },
         move: function (currentName, newName, callback) {
-        	var self = this;
-        	var hasCallback = typeof (callback) === "function";
+          var self = this;
+          var hasCallback = typeof (callback) === "function";
 
-        	this.client.move(currentName, newName, function (error, info) {
-        		if (error) {
-        			// TODO: use a general error handling
-        			var callStatus = {
-        				'isOK': false,
-        				'code': -1,
-        				'msg': error.response.error
-        			};
+          this.client.move(currentName, newName, function (error, info) {
+            if (error) {
+              // TODO: use a general error handling
+              var callStatus = {
+                'isOK': false,
+                'code': -1,
+                'msg': error.response.error
+              };
 
-        			if (hasCallback) {
-        				callback(callStatus);
-        			}
-        		} else {
-        			var callStatus = {
-        				'isOK': true,
-        				'code': 0,
-        				'msg': ''
-        			};
+              if (hasCallback) {
+                callback(callStatus);
+              }
+            } else {
+              var callStatus = {
+                'isOK': true,
+                'code': 0,
+                'msg': ''
+              };
 
-        			if (hasCallback) {
-        				callback(callStatus);
-        			}
-        		}
-        	});
+              if (hasCallback) {
+                callback(callStatus);
+              }
+            }
+          });
         },
         del: function (name, callback) {
             var self = this;
@@ -227,7 +227,7 @@
             this.client.readdir(name, function (error, filenames, dirInfo, fileInfos) {
                 var lists = [];
 
-				// If there is an error and it was not just the 404 (page not found) error, return error message.
+        // If there is an error and it was not just the 404 (page not found) error, return error message.
                 if (error && error.status != 404) {
                     var callStatus = {
                         'isOK': false,
@@ -238,21 +238,21 @@
                         callback(lists, callStatus);
                     }
                 } else {
-					// Only loop trough fileinfos if we have them (We don't have them for 404 for example)
-	                if (fileInfos) {
-		                for (var i = 0; i < fileInfos.length; i++) {
-		                	var info = fileInfos[i];
-			                lists.push({
-			                	'path': info.path,
-								'name': info.name,
-				                'size': info.size,
-				                'mime-type': info.mimeType,
-				                'modified': info.modifiedAt
-			                });
-		                }
-	                }
+          // Only loop trough fileinfos if we have them (We don't have them for 404 for example)
+                  if (fileInfos) {
+                    for (var i = 0; i < fileInfos.length; i++) {
+                      var info = fileInfos[i];
+                      lists.push({
+                        'path': info.path,
+                'name': info.name,
+                        'size': info.size,
+                        'mime-type': info.mimeType,
+                        'modified': info.modifiedAt
+                      });
+                    }
+                  }
 
-	                var callStatus = {
+                  var callStatus = {
                         'isOK': lists.length ? true : false,
                         'code': 0,
                         'msg': ''

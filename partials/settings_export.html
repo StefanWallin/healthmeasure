@@ -2,40 +2,40 @@
 
 <!-- First step, do authorization -->
 <section class="setting_section" ng-hide="isDropboxAuthed">
-	<div class="container_12">
-		<h2 class="setting_header">{{translations.page.settings.export_header.awaiting_auth[currentLanguage]}}</h2>
-		<p class="grid_full">{{translations.page.settings.export_paragraph.awaiting_auth[currentLanguage]}}</p>
-		<div class="grid_full">
-			<btn ng-click="authDropbox()" type="positive">{{translations.page.settings.auth_button[currentLanguage]}}</btn>
-		</div>	</div>
+  <div class="container_12">
+    <h2 class="setting_header">{{translations.page.settings.export_header.awaiting_auth[currentLanguage]}}</h2>
+    <p class="grid_full">{{translations.page.settings.export_paragraph.awaiting_auth[currentLanguage]}}</p>
+    <div class="grid_full">
+      <btn ng-click="authDropbox()" type="positive">{{translations.page.settings.auth_button[currentLanguage]}}</btn>
+    </div>	</div>
 </section>
 
 <!-- Second step, backup has not yet been completed. -->
 <section class="setting_section" ng-show="isDropboxAuthed && !isBackupDone">
-	<div class="container_12">
-		<h2 class="setting_header">{{translations.page.settings.export_header.waiting[currentLanguage]}}</h2>
+  <div class="container_12">
+    <h2 class="setting_header">{{translations.page.settings.export_header.waiting[currentLanguage]}}</h2>
 </section>
 
 <!-- Third step, backup has completed -->
 <section class="setting_section" ng-show="isDropboxAuthed && isBackupDone && !hasBackupFailed">
-	<div class="container_12">
-		<h2 class="setting_header">{{translations.page.settings.export_header.success[currentLanguage]}}</h2>
-		<p class="grid_full">{{translations.page.settings.export_paragraph.success[currentLanguage]}}</p>
-		
-		<code class="grid_full">healthmeasure/hm.backup.json</code>
+  <div class="container_12">
+    <h2 class="setting_header">{{translations.page.settings.export_header.success[currentLanguage]}}</h2>
+    <p class="grid_full">{{translations.page.settings.export_paragraph.success[currentLanguage]}}</p>
+    
+    <code class="grid_full">healthmeasure/hm.backup.json</code>
 
-		<div class="grid_full">
-			<btn ng-click="exportData()" type="positive">{{translations.page.settings.export_button[currentLanguage]}}</btn>
-		</div>	</div>
+    <div class="grid_full">
+      <btn ng-click="exportData()" type="positive">{{translations.page.settings.export_button[currentLanguage]}}</btn>
+    </div>	</div>
 </section>
 
 <!-- Third anomaly step, backup has failed -->
 <section class="setting_section" ng-show="isDropboxAuthed && isBackupDone && hasBackupFailed">
-	<div class="container_12">
-		<h2 class="setting_header">{{translations.page.settings.export_header.failure[currentLanguage]}}</h2>
-		<p class="grid_full">{{translations.page.settings.export_paragraph.failure[currentLanguage]}}</p>
-		<div class="grid_full">
-			<btn ng-click="exportData()" type="positive">{{translations.page.settings.export_button[currentLanguage]}}</btn>
-		</div>	</div>
+  <div class="container_12">
+    <h2 class="setting_header">{{translations.page.settings.export_header.failure[currentLanguage]}}</h2>
+    <p class="grid_full">{{translations.page.settings.export_paragraph.failure[currentLanguage]}}</p>
+    <div class="grid_full">
+      <btn ng-click="exportData()" type="positive">{{translations.page.settings.export_button[currentLanguage]}}</btn>
+    </div>	</div>
 </section>
 

@@ -1,12 +1,12 @@
 <h2 class="main_heading">{{translations.menu.exercise[currentLanguage]}}</h2>
 
 <ul class="menu activitygroup">
-	<li ng-repeat="(activity, parameters) in activityData[params.group]">
-		<a href="#/exercise/{{group}}/{{activity}}">{{ translations.activities[activity][currentLanguage] }}</a>
-	</li>
+  <li ng-repeat="(activity, parameters) in activityData[params.group]">
+    <a href="#/exercise/{{group}}/{{activity}}">{{ translations.activities[activity][currentLanguage] }}</a>
+  </li>
 </ul>
 
 <!--	<ul>
-		<li ng-repeat="(activity, parameters) in activities">{{activity}} - {{parameters}}</li>
-	</ul>
+    <li ng-repeat="(activity, parameters) in activities">{{activity}} - {{parameters}}</li>
+  </ul>
  -->

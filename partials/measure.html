@@ -1,188 +1,188 @@
 <h2 class="main_heading">{{translations.menu.measure[currentLanguage]}}</h2>
 
 <form name="measureForm" class="container_12" novalidate>
-	<p class="info_paragraph"><strong>{{translations.page.measure.enter_measurements[currentLanguage]}}</strong></p>
-	<p class="info_paragraph error-container" ng-show="no_values_error">
-		<strong class="error ">{{translations.page.measure.error.empty_form[currentLanguage]}}</strong>
-	</p>
+  <p class="info_paragraph"><strong>{{translations.page.measure.enter_measurements[currentLanguage]}}</strong></p>
+  <p class="info_paragraph error-container" ng-show="no_values_error">
+    <strong class="error ">{{translations.page.measure.error.empty_form[currentLanguage]}}</strong>
+  </p>
 
-	<div class="field--wrapper grid_half">
-		<label for="left_biceps">{{translations.page.measure.form.left_biceps.label[currentLanguage]}}</label>
-		<input id="left_biceps" name="left_biceps" ng-model="new_left_biceps" placeholder="{{translations.page.measure.form.left_biceps.label[currentLanguage]}}" ng-minlength="2" ng-maxlength="4" ng-pattern="/^\s*\d{2,4}\s*$/" type="tel">
-		<small>mm</small>
-		<div class="error-container" ng-show="measureForm.left_biceps.$dirty && measureForm.left_biceps.$invalid">
-			<small class="error" ng-show="measureForm.left_biceps.$error.required">
-				{{translations.page.measure.error.left_biceps.required[currentLanguage]}}
-			</small>
-			<small class="error" ng-show="measureForm.left_biceps.$error.minlength">
-				{{translations.page.measure.error.left_biceps.minlength[currentLanguage]}}
-			</small>
-			<small class="error" ng-show="measureForm.left_biceps.$error.pattern">
-				{{translations.page.measure.error.left_biceps.pattern[currentLanguage]}}
-			</small>
-			<small class="error" ng-show="measureForm.left_biceps.$error.maxlength">
-				{{translations.page.measure.error.left_biceps.maxlength[currentLanguage]}}
-			</small>
-		</div>
-	</div>
-	<div class="field--wrapper grid_half">
-		<label for="right_biceps">{{translations.page.measure.form.right_biceps.label[currentLanguage]}}</label>
-		<input id="right_biceps" name="right_biceps" ng-model="new_right_biceps" placeholder="{{translations.page.measure.form.right_biceps.label[currentLanguage]}}" ng-minlength="2" ng-maxlength="4" ng-pattern="/^\s*\d{2,4}\s*$/" type="tel">
-		<small>mm</small>
-		<div class="error-container" ng-show="measureForm.right_biceps.$dirty && measureForm.right_biceps.$invalid">
-			<small class="error" ng-show="measureForm.right_biceps.$error.required">
-				{{translations.page.measure.error.right_biceps.required[currentLanguage]}}
-			</small>
-			<small class="error" ng-show="measureForm.right_biceps.$error.minlength">
-				{{translations.page.measure.error.right_biceps.minlength[currentLanguage]}}
-			</small>
-			<small class="error" ng-show="measureForm.right_biceps.$error.pattern">
-				{{translations.page.measure.error.right_biceps.pattern[currentLanguage]}}
-			</small>
-			<small class="error" ng-show="measureForm.right_biceps.$error.maxlength">
-				{{translations.page.measure.error.right_biceps.maxlength[currentLanguage]}}
-			</small>
-		</div>
-	</div>
-	<div class="field--wrapper grid_full">
-		<label for="bust">{{translations.page.measure.form.bust.label[currentLanguage]}}</label>
-		<input id="bust" name="bust" ng-model="new_bust" placeholder="{{translations.page.measure.form.bust.label[currentLanguage]}}" ng-minlength="3" ng-maxlength="4" ng-pattern="/^\s*\d{3,4}\s*$/" type="tel">
-		<small>mm</small>
-		<div class="error-container" ng-show="measureForm.bust.$dirty && measureForm.bust.$invalid">
-			<small class="error" ng-show="measureForm.bust.$error.required">
-				{{translations.page.measure.error.bust.required[currentLanguage]}}
-			</small>
-			<small class="error" ng-show="measureForm.bust.$error.minlength">
-				{{translations.page.measure.error.bust.minlength[currentLanguage]}}
-			</small>
-			<small class="error" ng-show="measureForm.bust.$error.pattern">
-				{{translations.page.measure.error.bust.pattern[currentLanguage]}}
-			</small>
-			<small class="error" ng-show="measureForm.bust.$error.maxlength">
-				{{translations.page.measure.error.bust.maxlength[currentLanguage]}}
-			</small>
-		</div>
-	</div>
-	<div class="field--wrapper grid_full">
-		<label for="tummy">{{translations.page.measure.form.tummy.label[currentLanguage]}}</label>
-		<input id="tummy" name="tummy" ng-model="new_tummy" placeholder="{{translations.page.measure.form.tummy.label[currentLanguage]}}"  ng-minlength="3" ng-maxlength="4" ng-pattern="/^\s*\d{3,4}\s*$/" type="tel">
-		<small>mm</small>
-		<div class="error-container" ng-show="measureForm.tummy.$dirty && measureForm.tummy.$invalid">
-			<small class="error" ng-show="measureForm.tummy.$error.required">
-				{{translations.page.measure.error.tummy.required[currentLanguage]}}
-			</small>
-			<small class="error" ng-show="measureForm.tummy.$error.minlength">
-				{{translations.page.measure.error.tummy.minlength[currentLanguage]}}
-			</small>
-			<small class="error" ng-show="measureForm.tummy.$error.pattern">
-				{{translations.page.measure.error.tummy.pattern[currentLanguage]}}
-			</small>
-			<small class="error" ng-show="measureForm.tummy.$error.maxlength">
-				{{translations.page.measure.error.tummy.maxlength[currentLanguage]}}
-			</small>
-		</div>
-	</div>
-	<div class="field--wrapper grid_full">
-		<label for="butt">{{translations.page.measure.form.butt.label[currentLanguage]}}</label>
-		<input id="butt" name="butt" ng-model="new_butt" placeholder="{{translations.page.measure.form.butt.label[currentLanguage]}}" ng-minlength="3" ng-maxlength="4" ng-pattern="/^\s*\d{3,4}\s*$/" type="tel">
-		<small>mm</small>
-		<div class="error-container" ng-show="measureForm.butt.$dirty && measureForm.butt.$invalid">
-			<small class="error" ng-show="measureForm.butt.$error.required">
-				{{translations.page.measure.error.butt.required[currentLanguage]}}
-			</small>
-			<small class="error" ng-show="measureForm.butt.$error.minlength">
-				{{translations.page.measure.error.butt.minlength[currentLanguage]}}
-			</small>
-			<small class="error" ng-show="measureForm.butt.$error.pattern">
-				{{translations.page.measure.error.butt.pattern[currentLanguage]}}
-			</small>
-			<small class="error" ng-show="measureForm.butt.$error.maxlength">
-				{{translations.page.measure.error.butt.maxlength[currentLanguage]}}
-			</small>
-		</div>
-	</div>
-	<div class="field--wrapper grid_half">
-		<label for="left_thigh">{{translations.page.measure.form.left_thigh.label[currentLanguage]}}</label>
-		<input id="left_thigh" name="left_thigh" ng-model="new_left_thigh" placeholder="{{translations.page.measure.form.left_thigh.label[currentLanguage]}}" ng-minlength="3" ng-maxlength="4" ng-pattern="/^\s*\d{3,4}\s*$/" type="tel">
-		<small>mm</small>
-		<div class="error-container" ng-show="measureForm.left_thigh.$dirty && measureForm.left_thigh.$invalid">
-			<small class="error" ng-show="measureForm.left_thigh.$error.required">
-				{{translations.page.measure.error.left_thigh.required[currentLanguage]}}
-			</small>
-			<small class="error" ng-show="measureForm.left_thigh.$error.minlength">
-				{{translations.page.measure.error.left_thigh.minlength[currentLanguage]}}
-			</small>
-			<small class="error" ng-show="measureForm.left_thigh.$error.pattern">
-				{{translations.page.measure.error.left_thigh.pattern[currentLanguage]}}
-			</small>
-			<small class="error" ng-show="measureForm.left_thigh.$error.maxlength">
-				{{translations.page.measure.error.left_thigh.maxlength[currentLanguage]}}
-			</small>
-		</div>
-	</div>
-	<div class="field--wrapper grid_half">
-		<label for="right_thigh">{{translations.page.measure.form.right_thigh.label[currentLanguage]}}</label>
-		<input id="right_thigh" name="right_thigh" ng-model="new_right_thigh" placeholder="{{translations.page.measure.form.right_thigh.label[currentLanguage]}}" ng-minlength="3" ng-maxlength="4" ng-pattern="/^\s*\d{3,4}\s*$/" type="tel">
-		<small>mm</small>
-		<div class="error-container" ng-show="measureForm.right_thigh.$dirty && measureForm.right_thigh.$invalid">
-			<small class="error" ng-show="measureForm.right_thigh.$error.required">
-				{{translations.page.measure.error.right_thigh.required[currentLanguage]}}
-			</small>
-			<small class="error" ng-show="measureForm.right_thigh.$error.minlength">
-				{{translations.page.measure.error.right_thigh.minlength[currentLanguage]}}
-			</small>
-			<small class="error" ng-show="measureForm.right_thigh.$error.pattern">
-				{{translations.page.measure.error.right_thigh.pattern[currentLanguage]}}
-			</small>
-			<small class="error" ng-show="measureForm.right_thigh.$error.maxlength">
-				{{translations.page.measure.error.right_thigh.maxlength[currentLanguage]}}
-			</small>
-		</div>
-	</div>
-	<div class="field--wrapper grid_half">
-		<label for="left_calf">{{translations.page.measure.form.left_calf.label[currentLanguage]}}</label>
-		<input id="left_calf" name="left_calf" ng-model="new_left_calf" placeholder="{{translations.page.measure.form.left_calf.label[currentLanguage]}}" ng-minlength="2" ng-maxlength="4" ng-pattern="/^\s*\d{2,4}\s*$/" type="tel">
-		<small>mm</small>
-		<div class="error-container" ng-show="measureForm.left_calf.$dirty && measureForm.left_calf.$invalid">
-			<small class="error" ng-show="measureForm.left_calf.$error.required">
-				{{translations.page.measure.error.left_calf.required[currentLanguage]}}
-			</small>
-			<small class="error" ng-show="measureForm.left_calf.$error.minlength">
-				{{translations.page.measure.error.left_calf.minlength[currentLanguage]}}
-			</small>
-			<small class="error" ng-show="measureForm.left_calf.$error.pattern">
-				{{translations.page.measure.error.left_calf.pattern[currentLanguage]}}
-			</small>
-			<small class="error" ng-show="measureForm.left_calf.$error.maxlength">
-				{{translations.page.measure.error.left_calf.maxlength[currentLanguage]}}
-			</small>
-		</div>
-	</div>
-	<div class="field--wrapper grid_half">
-		<label for="right_calf">{{translations.page.measure.form.right_calf.label[currentLanguage]}}</label>
-		<input id="right_calf" name="right_calf" ng-model="new_right_calf" placeholder="{{translations.page.measure.form.right_calf.label[currentLanguage]}}" ng-minlength="2" ng-maxlength="4" ng-pattern="/^\s*\d{2,4}\s*$/" type="tel">
-		<small>mm</small>
-		<div class="error-container" ng-show="measureForm.right_calf.$dirty && measureForm.right_calf.$invalid">
-			<small class="error" ng-show="measureForm.right_calf.$error.required">
-				{{translations.page.measure.error.right_calf.required[currentLanguage]}}
-			</small>
-			<small class="error" ng-show="measureForm.right_calf.$error.minlength">
-				{{translations.page.measure.error.right_calf.minlength[currentLanguage]}}
-			</small>
-			<small class="error" ng-show="measureForm.right_calf.$error.pattern">
-				{{translations.page.measure.error.right_calf.pattern[currentLanguage]}}
-			</small>
-			<small class="error" ng-show="measureForm.right_calf.$error.maxlength">
-				{{translations.page.measure.error.right_calf.maxlength[currentLanguage]}}
-			</small>
-		</div>
-	</div>
+  <div class="field--wrapper grid_half">
+    <label for="left_biceps">{{translations.page.measure.form.left_biceps.label[currentLanguage]}}</label>
+    <input id="left_biceps" name="left_biceps" ng-model="new_left_biceps" placeholder="{{translations.page.measure.form.left_biceps.label[currentLanguage]}}" ng-minlength="2" ng-maxlength="4" ng-pattern="/^\s*\d{2,4}\s*$/" type="tel">
+    <small>mm</small>
+    <div class="error-container" ng-show="measureForm.left_biceps.$dirty && measureForm.left_biceps.$invalid">
+      <small class="error" ng-show="measureForm.left_biceps.$error.required">
+        {{translations.page.measure.error.left_biceps.required[currentLanguage]}}
+      </small>
+      <small class="error" ng-show="measureForm.left_biceps.$error.minlength">
+        {{translations.page.measure.error.left_biceps.minlength[currentLanguage]}}
+      </small>
+      <small class="error" ng-show="measureForm.left_biceps.$error.pattern">
+        {{translations.page.measure.error.left_biceps.pattern[currentLanguage]}}
+      </small>
+      <small class="error" ng-show="measureForm.left_biceps.$error.maxlength">
+        {{translations.page.measure.error.left_biceps.maxlength[currentLanguage]}}
+      </small>
+    </div>
+  </div>
+  <div class="field--wrapper grid_half">
+    <label for="right_biceps">{{translations.page.measure.form.right_biceps.label[currentLanguage]}}</label>
+    <input id="right_biceps" name="right_biceps" ng-model="new_right_biceps" placeholder="{{translations.page.measure.form.right_biceps.label[currentLanguage]}}" ng-minlength="2" ng-maxlength="4" ng-pattern="/^\s*\d{2,4}\s*$/" type="tel">
+    <small>mm</small>
+    <div class="error-container" ng-show="measureForm.right_biceps.$dirty && measureForm.right_biceps.$invalid">
+      <small class="error" ng-show="measureForm.right_biceps.$error.required">
+        {{translations.page.measure.error.right_biceps.required[currentLanguage]}}
+      </small>
+      <small class="error" ng-show="measureForm.right_biceps.$error.minlength">
+        {{translations.page.measure.error.right_biceps.minlength[currentLanguage]}}
+      </small>
+      <small class="error" ng-show="measureForm.right_biceps.$error.pattern">
+        {{translations.page.measure.error.right_biceps.pattern[currentLanguage]}}
+      </small>
+      <small class="error" ng-show="measureForm.right_biceps.$error.maxlength">
+        {{translations.page.measure.error.right_biceps.maxlength[currentLanguage]}}
+      </small>
+    </div>
+  </div>
+  <div class="field--wrapper grid_full">
+    <label for="bust">{{translations.page.measure.form.bust.label[currentLanguage]}}</label>
+    <input id="bust" name="bust" ng-model="new_bust" placeholder="{{translations.page.measure.form.bust.label[currentLanguage]}}" ng-minlength="3" ng-maxlength="4" ng-pattern="/^\s*\d{3,4}\s*$/" type="tel">
+    <small>mm</small>
+    <div class="error-container" ng-show="measureForm.bust.$dirty && measureForm.bust.$invalid">
+      <small class="error" ng-show="measureForm.bust.$error.required">
+        {{translations.page.measure.error.bust.required[currentLanguage]}}
+      </small>
+      <small class="error" ng-show="measureForm.bust.$error.minlength">
+        {{translations.page.measure.error.bust.minlength[currentLanguage]}}
+      </small>
+      <small class="error" ng-show="measureForm.bust.$error.pattern">
+        {{translations.page.measure.error.bust.pattern[currentLanguage]}}
+      </small>
+      <small class="error" ng-show="measureForm.bust.$error.maxlength">
+        {{translations.page.measure.error.bust.maxlength[currentLanguage]}}
+      </small>
+    </div>
+  </div>
+  <div class="field--wrapper grid_full">
+    <label for="tummy">{{translations.page.measure.form.tummy.label[currentLanguage]}}</label>
+    <input id="tummy" name="tummy" ng-model="new_tummy" placeholder="{{translations.page.measure.form.tummy.label[currentLanguage]}}"  ng-minlength="3" ng-maxlength="4" ng-pattern="/^\s*\d{3,4}\s*$/" type="tel">
+    <small>mm</small>
+    <div class="error-container" ng-show="measureForm.tummy.$dirty && measureForm.tummy.$invalid">
+      <small class="error" ng-show="measureForm.tummy.$error.required">
+        {{translations.page.measure.error.tummy.required[currentLanguage]}}
+      </small>
+      <small class="error" ng-show="measureForm.tummy.$error.minlength">
+        {{translations.page.measure.error.tummy.minlength[currentLanguage]}}
+      </small>
+      <small class="error" ng-show="measureForm.tummy.$error.pattern">
+        {{translations.page.measure.error.tummy.pattern[currentLanguage]}}
+      </small>
+      <small class="error" ng-show="measureForm.tummy.$error.maxlength">
+        {{translations.page.measure.error.tummy.maxlength[currentLanguage]}}
+      </small>
+    </div>
+  </div>
+  <div class="field--wrapper grid_full">
+    <label for="butt">{{translations.page.measure.form.butt.label[currentLanguage]}}</label>
+    <input id="butt" name="butt" ng-model="new_butt" placeholder="{{translations.page.measure.form.butt.label[currentLanguage]}}" ng-minlength="3" ng-maxlength="4" ng-pattern="/^\s*\d{3,4}\s*$/" type="tel">
+    <small>mm</small>
+    <div class="error-container" ng-show="measureForm.butt.$dirty && measureForm.butt.$invalid">
+      <small class="error" ng-show="measureForm.butt.$error.required">
+        {{translations.page.measure.error.butt.required[currentLanguage]}}
+      </small>
+      <small class="error" ng-show="measureForm.butt.$error.minlength">
+        {{translations.page.measure.error.butt.minlength[currentLanguage]}}
+      </small>
+      <small class="error" ng-show="measureForm.butt.$error.pattern">
+        {{translations.page.measure.error.butt.pattern[currentLanguage]}}
+      </small>
+      <small class="error" ng-show="measureForm.butt.$error.maxlength">
+        {{translations.page.measure.error.butt.maxlength[currentLanguage]}}
+      </small>
+    </div>
+  </div>
+  <div class="field--wrapper grid_half">
+    <label for="left_thigh">{{translations.page.measure.form.left_thigh.label[currentLanguage]}}</label>
+    <input id="left_thigh" name="left_thigh" ng-model="new_left_thigh" placeholder="{{translations.page.measure.form.left_thigh.label[currentLanguage]}}" ng-minlength="3" ng-maxlength="4" ng-pattern="/^\s*\d{3,4}\s*$/" type="tel">
+    <small>mm</small>
+    <div class="error-container" ng-show="measureForm.left_thigh.$dirty && measureForm.left_thigh.$invalid">
+      <small class="error" ng-show="measureForm.left_thigh.$error.required">
+        {{translations.page.measure.error.left_thigh.required[currentLanguage]}}
+      </small>
+      <small class="error" ng-show="measureForm.left_thigh.$error.minlength">
+        {{translations.page.measure.error.left_thigh.minlength[currentLanguage]}}
+      </small>
+      <small class="error" ng-show="measureForm.left_thigh.$error.pattern">
+        {{translations.page.measure.error.left_thigh.pattern[currentLanguage]}}
+      </small>
+      <small class="error" ng-show="measureForm.left_thigh.$error.maxlength">
+        {{translations.page.measure.error.left_thigh.maxlength[currentLanguage]}}
+      </small>
+    </div>
+  </div>
+  <div class="field--wrapper grid_half">
+    <label for="right_thigh">{{translations.page.measure.form.right_thigh.label[currentLanguage]}}</label>
+    <input id="right_thigh" name="right_thigh" ng-model="new_right_thigh" placeholder="{{translations.page.measure.form.right_thigh.label[currentLanguage]}}" ng-minlength="3" ng-maxlength="4" ng-pattern="/^\s*\d{3,4}\s*$/" type="tel">
+    <small>mm</small>
+    <div class="error-container" ng-show="measureForm.right_thigh.$dirty && measureForm.right_thigh.$invalid">
+      <small class="error" ng-show="measureForm.right_thigh.$error.required">
+        {{translations.page.measure.error.right_thigh.required[currentLanguage]}}
+      </small>
+      <small class="error" ng-show="measureForm.right_thigh.$error.minlength">
+        {{translations.page.measure.error.right_thigh.minlength[currentLanguage]}}
+      </small>
+      <small class="error" ng-show="measureForm.right_thigh.$error.pattern">
+        {{translations.page.measure.error.right_thigh.pattern[currentLanguage]}}
+      </small>
+      <small class="error" ng-show="measureForm.right_thigh.$error.maxlength">
+        {{translations.page.measure.error.right_thigh.maxlength[currentLanguage]}}
+      </small>
+    </div>
+  </div>
+  <div class="field--wrapper grid_half">
+    <label for="left_calf">{{translations.page.measure.form.left_calf.label[currentLanguage]}}</label>
+    <input id="left_calf" name="left_calf" ng-model="new_left_calf" placeholder="{{translations.page.measure.form.left_calf.label[currentLanguage]}}" ng-minlength="2" ng-maxlength="4" ng-pattern="/^\s*\d{2,4}\s*$/" type="tel">
+    <small>mm</small>
+    <div class="error-container" ng-show="measureForm.left_calf.$dirty && measureForm.left_calf.$invalid">
+      <small class="error" ng-show="measureForm.left_calf.$error.required">
+        {{translations.page.measure.error.left_calf.required[currentLanguage]}}
+      </small>
+      <small class="error" ng-show="measureForm.left_calf.$error.minlength">
+        {{translations.page.measure.error.left_calf.minlength[currentLanguage]}}
+      </small>
+      <small class="error" ng-show="measureForm.left_calf.$error.pattern">
+        {{translations.page.measure.error.left_calf.pattern[currentLanguage]}}
+      </small>
+      <small class="error" ng-show="measureForm.left_calf.$error.maxlength">
+        {{translations.page.measure.error.left_calf.maxlength[currentLanguage]}}
+      </small>
+    </div>
+  </div>
+  <div class="field--wrapper grid_half">
+    <label for="right_calf">{{translations.page.measure.form.right_calf.label[currentLanguage]}}</label>
+    <input id="right_calf" name="right_calf" ng-model="new_right_calf" placeholder="{{translations.page.measure.form.right_calf.label[currentLanguage]}}" ng-minlength="2" ng-maxlength="4" ng-pattern="/^\s*\d{2,4}\s*$/" type="tel">
+    <small>mm</small>
+    <div class="error-container" ng-show="measureForm.right_calf.$dirty && measureForm.right_calf.$invalid">
+      <small class="error" ng-show="measureForm.right_calf.$error.required">
+        {{translations.page.measure.error.right_calf.required[currentLanguage]}}
+      </small>
+      <small class="error" ng-show="measureForm.right_calf.$error.minlength">
+        {{translations.page.measure.error.right_calf.minlength[currentLanguage]}}
+      </small>
+      <small class="error" ng-show="measureForm.right_calf.$error.pattern">
+        {{translations.page.measure.error.right_calf.pattern[currentLanguage]}}
+      </small>
+      <small class="error" ng-show="measureForm.right_calf.$error.maxlength">
+        {{translations.page.measure.error.right_calf.maxlength[currentLanguage]}}
+      </small>
+    </div>
+  </div>
 
-	<p class="info_paragraph error-container" ng-show="no_values_error">
-		<strong class="error">{{translations.page.measure.error.empty_form[currentLanguage]}}</strong>
-	</p>
-	
+  <p class="info_paragraph error-container" ng-show="no_values_error">
+    <strong class="error">{{translations.page.measure.error.empty_form[currentLanguage]}}</strong>
+  </p>
+  
 </form>
 <div class="container_12">
-	<btn ng-click="measureUp()" type="positive">{{translations.page.measure.save_measurements[currentLanguage]}}</btn>
+  <btn ng-click="measureUp()" type="positive">{{translations.page.measure.save_measurements[currentLanguage]}}</btn>
 </div>
